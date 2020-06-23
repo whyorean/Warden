@@ -41,5 +41,11 @@
 
 * [RX-Java](https://github.com/ReactiveX/RxJava)
 * [ButterKnife](https://github.com/JakeWharton/butterknife)
+* [Retrofit](https://square.github.io/retrofit/)
 * [Fastadapter](https://github.com/mikepenz/FastAdapter)
+* [Lombok](https://github.com/noties/Markwon)
+* [Markwon](https://github.com/noties/Markwon)
+* [LibSu](https://github.com/topjohnwu/libsu)
+* [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)
+* [ExpansionPanel](https://github.com/florent37/ExpansionPanel)
 
