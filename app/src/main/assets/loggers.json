@@ -1,0 +1,218 @@
+{
+  "1": {
+    "id": 1,
+    "name": "LoggingInterceptor",
+    "code_signature": "com.ihsanbal.logging",
+    "website": "https://github.com/ihsanbal/LoggingInterceptor"
+  },
+  "2": {
+    "id": 2,
+    "name": "KTimber",
+    "code_signature": "com.dci.dev.ktimber",
+    "website": "https://github.com/ditacristianionut/ktimber"
+  },
+  "3": {
+    "id": 3,
+    "name": "StreamingAndroidLogger",
+    "code_signature": "net.kibotu.logger",
+    "website": "https://github.com/kibotu/StreamingAndroidLogger"
+  },
+  "4": {
+    "id": 4,
+    "name": "Appx - LazyLogger",
+    "code_signature": "beanman90.appx.lazylogger",
+    "website": "https://github.com/beanman90/Appx-LazyLogger"
+  },
+  "5": {
+    "id": 5,
+    "name": "ExternalLogger",
+    "code_signature": "guy4444.extrnalloggerlibrary",
+    "website": "https://github.com/guy-4444/ExternalLogger-Android"
+  },
+  "6": {
+    "id": 6,
+    "name": "LogKit",
+    "code_signature": "com.andreacioccarelli.logkit",
+    "website": "https://github.com/AndreaCioccarelli/LogKit"
+  },
+  "7": {
+    "id": 7,
+    "name": "slf4j-timber",
+    "code_signature": "at.favre.lib|org.slf4j",
+    "website": "https://github.com/patrickfav/slf4j-timber"
+  },
+  "8": {
+    "id": 8,
+    "name": "Android TAO Log",
+    "code_signature": "ua.at.tsvetkov.util",
+    "website": "https://github.com/lordtao/android-tao-log"
+  },
+  "9": {
+    "id": 9,
+    "name": "MyLog",
+    "code_signature": "net.alexandroid.utils.mylog|net.alexandroid.utils.mylogkt",
+    "website": "https://github.com/Pulimet/MyLogLibrary"
+  },
+  "10": {
+    "id": 10,
+    "name": "Logger",
+    "code_signature": "com.luseen.logger",
+    "website": "https://github.com/armcha/logger"
+  },
+  "11": {
+    "id": 11,
+    "name": "Android-FileLogger",
+    "code_signature": "com.bosphere.filelogger",
+    "website": "https://github.com/bosphere/Android-FileLogger"
+  },
+  "12": {
+    "id": 12,
+    "name": "Logy",
+    "code_signature": "co.balrampandey.logy",
+    "website": "https://github.com/balrampandey19/Logy"
+  },
+  "13": {
+    "id": 13,
+    "name": "Logger",
+    "code_signature": "com.hsalf.logger",
+    "website": "https://github.com/sujithkanna/logger"
+  },
+  "15": {
+    "id": 15,
+    "name": "Logger",
+    "code_signature": "universum.studios.android.logging",
+    "website": "https://bitbucket.org/android-universum/logger"
+  },
+  "16": {
+    "id": 16,
+    "name": "Specialized Logger",
+    "code_signature": "com.newtronlabs",
+    "website": "https://github.com/NewtronLabs/SpecializedLogger"
+  },
+  "17": {
+    "id": 17,
+    "name": "Android-Clog",
+    "code_signature": "com.caseyjbrooks.androidclog",
+    "website": "https://github.com/JavaEden/Android-Clog"
+  },
+  "18": {
+    "id": 18,
+    "name": "AndroidLogger",
+    "code_signature": "com.danylovolokh.androidlogger",
+    "website": "https://github.com/danylovolokh/AndroidLogger"
+  },
+  "19": {
+    "id": 19,
+    "name": "Logger",
+    "code_signature": "cn.zhaiyifan.logger",
+    "website": "https://github.com/markzhai/Logger"
+  },
+  "20": {
+    "id": 20,
+    "name": "Lumberjack",
+    "code_signature": "com.michaelflisar.lumberjack",
+    "website": "https://github.com/MFlisar/Lumberjack"
+  },
+  "21": {
+    "id": 21,
+    "name": "xLog",
+    "code_signature": "com.elvishew.xlog",
+    "website": "https://github.com/elvishew/xLog"
+  },
+  "22": {
+    "id": 22,
+    "name": "Timber",
+    "code_signature": "timber.log",
+    "website": "https://github.com/JakeWharton/timber"
+  },
+  "23": {
+    "id": 23,
+    "name": "SLF4J Android Logger",
+    "code_signature": "de.psdev.slf4j.android.logger",
+    "website": "https://github.com/PSDev/slf4j-android-logge"
+  },
+  "24": {
+    "id": 24,
+    "name": "DroidParts",
+    "code_signature": "org.droidparts.util",
+    "website": "https://github.com/droidparts/droidparts"
+  },
+  "25": {
+    "id": 25,
+    "name": "ArrowLogger",
+    "code_signature": "com.blundell.logger.arrow",
+    "website": "https://github.com/blundell/ArrowLogger"
+  },
+  "26": {
+    "id": 26,
+    "name": "IntentLogger",
+    "code_signature": "com.drivemode.intentlog",
+    "website": "https://github.com/Drivemode/IntentLogger"
+  },
+  "27": {
+    "id": 27,
+    "name": "FS Logger",
+    "code_signature": "fslogger.lizsoft.lv.fslogger",
+    "website": "https://github.com/omegasoft7/FSLogger"
+  },
+  "28": {
+    "id": 28,
+    "name": "Logger",
+    "code_signature": "com.orhanobut.logger",
+    "website": "https://github.com/orhanobut/logger"
+  },
+  "29": {
+    "id": 29,
+    "name": "scrog",
+    "code_signature": "com.smyshliaiev.scrog",
+    "website": "https://github.com/Smyshliaiev/scrog"
+  },
+  "30": {
+    "id": 30,
+    "name": "RemoteLogger",
+    "code_signature": "com.rogansoft.remotelogger",
+    "website": "https://github.com/sschendel/RemoteLogger"
+  },
+  "31": {
+    "id": 31,
+    "name": "Herald",
+    "code_signature": "com.github.vbauer.herald",
+    "website": "https://github.com/vbauer/herald"
+  },
+  "32": {
+    "id": 32,
+    "name": "Logger",
+    "code_signature": "com.onebit.logger",
+    "website": "https://github.com/ablack13/logger"
+  },
+  "33": {
+    "id": 33,
+    "name": "HyperLog Android",
+    "code_signature": "com.hypertrack.hyperlog",
+    "website": "https://github.com/hypertrack/hyperlog-android"
+  },
+  "34": {
+    "id": 34,
+    "name": "lympha",
+    "code_signature": "pro.mezentsev.lympha",
+    "website": "https://github.com/mezentsev/lympha"
+  },
+  "35": {
+    "id": 35,
+    "name": "LifecykleLog",
+    "code_signature": "com.chesire.lifecyklelog",
+    "website": "https://github.com/Chesire/LifecykleLog/"
+  },
+  "36": {
+    "id": 36,
+    "name": "Catdea Plugin",
+    "code_signature": "com.cybrosis.catdea",
+    "website": "https://github.com/Cybr0sis/Catdea"
+  },
+  "37": {
+    "id": 37,
+    "name": "Application Crash Reports for Android",
+    "code_signature": "org.acra",
+    "website": "https://github.com/ACRA"
+  }
+}

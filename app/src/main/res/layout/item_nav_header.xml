@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_height"
+    android:paddingTop="@dimen/padding_normal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/line1"
+        app:srcCompat="@drawable/ic_undraw_warden" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/line2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_xsmall"
+        android:text="@string/title_warden"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Aurora.Title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="@string/app_desc"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Aurora.SubTitle.Alt"
+        android:textSize="12sp" />
+</RelativeLayout>

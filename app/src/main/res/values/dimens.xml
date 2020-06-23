@@ -1,0 +1,47 @@
+<!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<resources>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_normal">10dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <dimen name="margin_xsmall">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">12dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+
+    <dimen name="icon_size_default">24dp</dimen>
+    <dimen name="icon_size_cat">32dp</dimen>
+    <dimen name="icon_size_link">36dp</dimen>
+    <dimen name="icon_size_small">48dp</dimen>
+    <dimen name="icon_size_medium">56dp</dimen>
+    <dimen name="icon_size_big">72dp</dimen>
+    <dimen name="icon_size_action">164dp</dimen>
+
+    <dimen name="corner_radius">28dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="search_height">52dp</dimen>
+    <dimen name="icon_size">64dp</dimen>
+    <dimen name="header_height">240dp</dimen>
+    <dimen name="button_width">250dp</dimen>
+    <dimen name="margin_action">64dp</dimen>
+</resources>

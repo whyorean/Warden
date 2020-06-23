@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/margin_normal"
+    android:paddingTop="@dimen/margin_small"
+    android:paddingEnd="@dimen/margin_normal"
+    android:paddingBottom="@dimen/margin_small">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
+
+        <com.aurora.warden.ui.custom.layout.app.BundleCountLayout
+            android:id="@+id/card_activities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tintColor="@color/colorShade01"
+            app:title="@string/title_activities" />
+
+        <com.aurora.warden.ui.custom.layout.app.BundleCountLayout
+            android:id="@+id/card_providers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tintColor="@color/colorShade02"
+            app:title="@string/title_providers" />
+
+        <com.aurora.warden.ui.custom.layout.app.BundleCountLayout
+            android:id="@+id/card_services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tintColor="@color/colorShade03"
+            app:title="@string/title_services" />
+
+        <com.aurora.warden.ui.custom.layout.app.BundleCountLayout
+            android:id="@+id/card_receivers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tintColor="@color/colorShade04"
+            app:title="@string/title_receivers" />
+
+        <com.aurora.warden.ui.custom.layout.app.BundleCountLayout
+            android:id="@+id/card_permissions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tintColor="@color/colorShade05"
+            app:title="@string/title_permissions" />
+    </com.google.android.flexbox.FlexboxLayout>
+</LinearLayout>

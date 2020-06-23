@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="@dimen/padding_small">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/top_tracker_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="@dimen/padding_small" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/top_logger_chart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:minHeight="320dp"
+            android:padding="@dimen/padding_small" />
+    </ViewFlipper>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="@dimen/padding_small">
+
+        <RelativeLayout
+            android:id="@+id/layout_chip"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="@dimen/margin_small">
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:checkedChip="@+id/chip_tracker"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_tracker"
+                    style="@style/Widget.Aurora.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_trackers" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_logger"
+                    style="@style/Widget.Aurora.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_loggers" />
+            </com.google.android.material.chip.ChipGroup>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/layout_timestamp"
+            android:layout_below="@id/layout_chip"
+            android:gravity="center">
+
+            <com.aurora.warden.ui.custom.layout.DisplayLayout
+                android:id="@+id/txt_apps_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/divider"
+                android:gravity="center"
+                tools:displayPrimary="24"
+                tools:displaySecondary="Apps" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="2dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_xsmall"
+                android:layout_marginEnd="@dimen/margin_xsmall"
+                android:background="?colorAccent" />
+
+            <com.aurora.warden.ui.custom.layout.DisplayLayout
+                android:id="@+id/txt_shit_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/divider"
+                android:gravity="center"
+                tools:displayPrimary="56"
+                tools:displaySecondary="Shit" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_timestamp"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_timestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/padded_bg_dashed"
+                android:textAppearance="@style/TextAppearance.Aurora.Line1"
+                android:textSize="14sp"
+                tools:text="Today" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

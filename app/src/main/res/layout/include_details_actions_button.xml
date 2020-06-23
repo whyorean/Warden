@@ -1,0 +1,50 @@
+<!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/margin_normal"
+    android:paddingEnd="@dimen/margin_normal"
+    android:weightSum="2">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_trackers"
+        style="@style/Aurora.Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginEnd="@dimen/margin_xsmall"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:text="@string/action_trackers"
+        android:textAppearance="@style/TextAppearance.Aurora.Button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_loggers"
+        style="@style/Aurora.Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/margin_xsmall"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:text="@string/action_loggers"
+        android:textAppearance="@style/TextAppearance.Aurora.Button" />
+</LinearLayout>

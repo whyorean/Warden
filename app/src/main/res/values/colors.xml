@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<resources>
+    <!-- primary palette -->
+    <color name="colorAccent">@color/colorWarden</color>
+    <color name="colorPrimary">@color/colorAccent</color>
+
+    <color name="colorScrim">#22000000</color>
+    <color name="colorScrimAccent">#226c63ff</color>
+
+    <!--More Colors-->
+    <color name="colorWarden">#6c63ff</color>
+    <color name="colorBlue">#4285f4</color>
+    <color name="colorRed">#ff6584</color>
+    <color name="colorGreen">#0abf53</color>
+    <color name="colorOrange">#ff9933</color>
+
+    <color name="colorShade01">#0abf53</color>
+    <color name="colorShade02">#1aafd0</color>
+    <color name="colorShade03">#6a67ce</color>
+    <color name="colorShade04">#ffb900</color>
+    <color name="colorShade05">#fc636b</color>
+    <color name="colorShade06">#8e43e7</color>
+</resources>

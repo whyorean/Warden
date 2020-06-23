@@ -1,0 +1,28 @@
+<!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M17,6h5v2h-2v13a1,1 0,0 1,-1 1L5,22a1,1 0,0 1,-1 -1L4,8L2,8L2,6h5L7,3a1,1 0,0 1,1 -1h8a1,1 0,0 1,1 1v3zM18,8L6,8v12h12L18,8zM13.414,14l1.768,1.768 -1.414,1.414L12,15.414l-1.768,1.768 -1.414,-1.414L10.586,14l-1.768,-1.768 1.414,-1.414L12,12.586l1.768,-1.768 1.414,1.414L13.414,14zM9,4v2h6L15,4L9,4z" />
+</vector>

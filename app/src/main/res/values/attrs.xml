@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<resources>
+    <declare-styleable name="WaveView">
+        <attr name="pointCount" format="integer" />
+        <attr name="startGradientColor" format="color" />
+        <attr name="endGradientColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="BundleCountLayout">
+        <attr name="count" format="string" />
+        <attr name="title" format="string" />
+        <attr name="tintColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ProgressLayout">
+        <attr name="progressText" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="EmptyLayout">
+        <attr name="emptyImage" format="reference" />
+        <attr name="emptyText" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MultiTextLayout">
+        <attr name="txtPrimary" format="string" />
+        <attr name="txtSecondary" format="string" />
+        <attr name="txtColorPrimary" format="color" />
+        <attr name="txtColorSecondary" format="color" />
+        <attr name="colorDivider" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="InfoLayout">
+        <attr name="infoPrimary" format="string" />
+        <attr name="infoSecondary" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="DisplayLayout">
+        <attr name="displayPrimary" format="string" />
+        <attr name="displaySecondary" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleMenuView">
+        <attr name="button_icons" format="reference" />
+        <attr name="button_colors" format="reference" />
+        <attr name="button_actions" format="reference" />
+        <attr name="distance" format="dimension" />
+        <attr name="duration_ring" format="integer" />
+        <attr name="duration_open" format="integer" />
+        <attr name="duration_close" format="integer" />
+        <attr name="icon_menu" format="reference" />
+        <attr name="icon_close" format="reference" />
+        <attr name="icon_color" format="color" />
+        <attr name="long_click_duration_ring" format="integer" />
+    </declare-styleable>
+</resources>

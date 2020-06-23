@@ -1,0 +1,55 @@
+<!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<resources>
+
+    <style name="AppTheme.PopupTheme" parent="ThemeOverlay.MaterialComponents.ActionBar" />
+
+    <style name="Widget.AppBar" parent="@style/Widget.Design.AppBarLayout">
+        <item name="popupTheme">@style/AppTheme.PopupTheme</item>
+        <item name="android:background">?android:attr/windowBackground</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Aurora.BottomSheetDialogStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="Aurora.BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Aurora.BottomSheetDialogStyle</item>
+    </style>
+
+    <style name="Widget.Aurora.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@android:color/transparent</item>
+        <item name="chipStrokeColor">@color/chip_stroke_selector</item>
+        <item name="android:textColor">@color/chip_txt_selector</item>
+        <item name="chipSurfaceColor">@color/chip_surface_selector</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStartPadding">@dimen/padding_small</item>
+        <item name="chipEndPadding">@dimen/padding_small</item>
+        <item name="android:textAppearance">@style/TextAppearance.Aurora.Chip</item>
+    </style>
+
+    <style name="Aurora.Button.Primary" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textAppearance">@style/TextAppearance.Aurora.Button</item>
+        <item name="android:textAppearanceButton">@style/TextAppearance.Aurora.Button</item>
+        <item name="cornerRadius">@dimen/corner_radius</item>
+    </style>
+</resources>

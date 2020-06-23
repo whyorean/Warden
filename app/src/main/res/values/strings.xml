@@ -1,0 +1,190 @@
+<!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<resources>
+    <string name="about_bhim">"BHIM - UPI"</string>
+    <string name="about_bhim_summary">"Donate via UPI"</string>
+    <string name="about_bitcoin_bch">"Bitcoin Cash"</string>
+    <string name="about_bitcoin_bch_summary">"Donate via Bitcoin Cash (BCH)"</string>
+    <string name="about_bitcoin_btc">"Bitcoin"</string>
+    <string name="about_bitcoin_btc_summary">"Donate via Bitcoin (BTC)"</string>
+    <string name="about_bitcoin_eth">"Ethereum"</string>
+    <string name="about_bitcoin_eth_summary">"Donate via Ethereum (ETH)"</string>
+    <string name="about_gitlab">"GitLab"</string>
+    <string name="about_gitlab_summary">"Get the Aurora Walls source code from Aurora OSS on GitLab."</string>
+    <string name="about_libera">"Libera Pay"</string>
+    <string name="about_libera_summary">"Become patron on Libera Pay"</string>
+    <string name="about_paypal">"Paypal"</string>
+    <string name="about_paypal_summary">"Donate via PayPal"</string>
+    <string name="about_telegram">"Telegram"</string>
+    <string name="about_telegram_summary">"Join the Aurora Support group for discussions or suggestions."</string>
+
+    <string name="action_cancel">"Cancel"</string>
+    <string name="action_canceled">"Canceled!"</string>
+    <string name="action_clear">"Clear"</string>
+    <string name="action_close">"Close"</string>
+    <string name="action_completed">"Scan Completed"</string>
+    <string name="action_copied">"Copied"</string>
+    <string name="action_debloat">"Debloat"</string>
+    <string name="action_disable">"Disable"</string>
+    <string name="action_disable_all">"Disable All"</string>
+    <string name="action_enable">"Enable"</string>
+    <string name="action_failed">"Failed!"</string>
+    <string name="action_grant">"Grant"</string>
+    <string name="action_hide">"Hide"</string>
+    <string name="action_later">"Later"</string>
+    <string name="action_loading">"Loading"</string>
+    <string name="action_loggers">"Loggers"</string>
+    <string name="action_nuke_it">"Nuke it!"</string>
+    <string name="action_proceed">"Proceed"</string>
+    <string name="action_scan_now">"Scan now"</string>
+    <string name="action_scanning">"Scanning"</string>
+    <string name="action_search_back">"Back to search"</string>
+    <string name="action_show_components">"Components"</string>
+    <string name="action_suspend">"Suspend"</string>
+    <string name="action_trackers">"Trackers"</string>
+    <string name="action_unhide">"Unhide"</string>
+    <string name="action_uninstall">"Uninstall"</string>
+    <string name="action_unsuspend">"Unsuspend"</string>
+    <string name="action_view_report">"View Report"</string>
+
+    <string name="app_aurora" translatable="false">"Aurora"</string>
+    <string name="app_desc">"App management utility"</string>
+    <string name="app_details">"Details"</string>
+    <string name="app_name" translatable="false">"Warden"</string>
+
+    <string name="details_title_bundled">"Bundled APK"</string>
+    <string name="details_title_category">"Category"</string>
+    <string name="details_title_installed">"Installed"</string>
+    <string name="details_title_installer">"Installer"</string>
+    <string name="details_title_package_info">"Package information"</string>
+    <string name="details_title_sdk">"Target SDK"</string>
+    <string name="details_title_space">Space used</string>
+    <string name="details_title_updated">"Last updated"</string>
+
+    <string name="menu_about">"About"</string>
+    <string name="menu_apps">"Apps"</string>
+    <string name="menu_debloat">"Debloater"</string>
+    <string name="menu_hidden_apps">"Hidden apps"</string>
+    <string name="menu_lab">"Lab"</string>
+    <string name="menu_loggers">"All Loggers"</string>
+    <string name="menu_scanner">"Scanner"</string>
+    <string name="menu_search">"Search"</string>
+    <string name="menu_app_usage">"Monitor"</string>
+    <string name="menu_settings">"Settings"</string>
+    <string name="menu_stats">"Stats"</string>
+    <string name="menu_trackers">"All Trackers"</string>
+    <string name="menu_warden">"Warden"</string>
+
+    <string name="notification_analysis">"Device analysis"</string>
+    <string name="notification_analysis_desc">"Collecting metadata"</string>
+    <string name="notification_channel_alert">"Warden Alert"</string>
+    <string name="notification_channel_service">"Warden Service"</string>
+    <string name="notification_debloat">"De-bloating apps"</string>
+    <string name="notification_debloat_desc">"Collecting metadata"</string>
+    <string name="notification_tracker">"Disabling trackers"</string>
+    <string name="notification_tracker_desc">"Collecting component data"</string>
+
+    <string name="permission_appop">"App op"</string>
+    <string name="permission_dangerous">"Dangerous"</string>
+    <string name="permission_development">"Development"</string>
+    <string name="permission_installer">"Installer"</string>
+    <string name="permission_instant">"Instant"</string>
+    <string name="permission_name_app_usage">App Usage Stats</string>
+    <string name="permission_name_notification">Do not disturb access</string>
+    <string name="permission_name_settings">Modify system settings access</string>
+    <string name="permission_pre23">"Pre23"</string>
+    <string name="permission_preinstalled">"Pre installed"</string>
+    <string name="permission_privileged">"Privileged"</string>
+    <string name="permission_runtime">"Runtime"</string>
+    <string name="permission_safe">"Safe"</string>
+    <string name="permission_setup">"Setup"</string>
+    <string name="permission_signature">"Signature"</string>
+    <string name="permission_system">"System"</string>
+    <string name="permission_unknown">"Unknown"</string>
+    <string name="permission_verifier">"Verifier"</string>
+
+    <string name="preference_analysis_header">"Static Analysis"</string>
+    <string name="preference_debloat_header">"Debloater"</string>
+    <string name="preference_ui_header">"User Interface"</string>
+    <string name="preferences_debloat">"Default debloat action"</string>
+    <string name="preferences_include_system">"Include System Apps"</string>
+    <string name="preferences_include_system_desc">"Scans system apps as well for trackers &amp; loggers"</string>
+    <string name="preferences_theme_title">"Select theme"</string>
+    <string name="preferences_device_awake">"Keep device awake"</string>
+    <string name="preferences_device_awake_desc">"Prevents device from sleeping while scan is in progress."</string>
+
+    <string name="string_info_logger_no_desc">"However, the app might still be doing logging stuff, as not all available loggers are known to warden."</string>
+    <string name="string_info_logger_no_title">"Yay! No loggers"</string>
+    <string name="string_info_tracker_no_desc">"However, the app might still be doing some sketchy stuff, do review the following components.\n\n1. Permissions\n2. Services\n3. Providers"</string>
+    <string name="string_info_tracker_no_title">"Yay! No trackers"</string>
+    <string name="string_info_tracker_working_exodus_desc">"Reports are fetched from Exodus Privacy and displayed here."</string>
+    <string name="string_info_tracker_working_desc">"1. Warden extracts all the class names from the APK.\n2. Matches these class names against a known set of tracker.\n3. Class names that match these signatures are shown as trackers/loggers."</string>
+    <string name="string_info_tracker_working_title">"How does it work ?"</string>
+    <string name="string_nuke_desc">"It is an experimental feature that scans all apps for components that match tracker signature and tries to automatically disable them.\nDisabling components may cause ANRs and FCs, so unless you are sure what you doing, don't do it."</string>
+    <string name="string_nuke_title">"Warning! Read before you Nuke it."</string>
+    <string name="string_nuke_export">"Export component list on the go ?"</string>
+    <string name="string_nuke_running">"Nuke is already in progress"</string>
+    <string name="string_unhide_app">"Do you wish to unhide this app?"</string>
+
+    <string name="title_activities">"Activities"</string>
+    <string name="title_activities_desc">"List of available activities"</string>
+    <string name="title_component">"Components"</string>
+    <string name="title_component_desc">"Components with matching tracker/logger signatures"</string>
+    <string name="title_credits">"Credits"</string>
+    <string name="title_debloat_profiles">"Debloat Profiles"</string>
+    <string name="title_lab">"Experimental Features"</string>
+    <string name="title_links">"Links"</string>
+    <string name="title_permission_desc">"App requires following permissions"</string>
+    <string name="title_permissions">"Permissions"</string>
+    <string name="title_providers">"Providers"</string>
+    <string name="title_providers_desc">"List of all available providers"</string>
+    <string name="title_receivers">"Receivers"</string>
+    <string name="title_receivers_desc">"List of all available receivers"</string>
+    <string name="title_scanner">"Scan all apps"</string>
+    <string name="title_search">"Search Exodus Report"</string>
+    <string name="title_services">"Services"</string>
+    <string name="title_services_desc">"List of all available services"</string>
+    <string name="title_warden">"App Warden"</string>
+
+    <string name="txt_camtono_failed">"Failed"</string>
+    <string name="txt_camtono_immutable_permission">"Immutable permission"</string>
+    <string name="txt_camtono_no_root">"No root"</string>
+    <string name="txt_camtono_success">"Success"</string>
+    <string name="txt_disabled">"Disabled"</string>
+    <string name="txt_enabled">"Enabled"</string>
+    <string name="txt_exodus_privacy">"Powered by Exodus Privacy"</string>
+    <string name="txt_exodus_searching">"Searching exodus report"</string>
+    <string name="txt_exported">"Exported"</string>
+    <string name="txt_no_apps">"No apps"</string>
+    <string name="txt_no_hidden_apps">"No hidden apps"</string>
+    <string name="txt_not_exported">"Not exported"</string>
+    <string name="txt_reports">"Reports"</string>
+    <string name="txt_root_required">"Requires root access"</string>
+    <string name="txt_search_hint">"Enter package name"</string>
+    <string name="txt_status_failed">"Scan failed"</string>
+    <string name="txt_status_loggers">"Logger found"</string>
+    <string name="txt_status_no_loggers">"No loggers found"</string>
+    <string name="txt_status_no_tracker">"No tracker found"</string>
+    <string name="txt_status_tracker">"Tracker found"</string>
+
+    <string name="usage_daily">Daily</string>
+    <string name="usage_weekly">Weekly</string>
+    <string name="usage_monthly">Monthly</string>
+</resources>
