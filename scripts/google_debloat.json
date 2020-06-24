@@ -1,0 +1,26 @@
+﻿{
+  "name": "Google De-bloater",
+  "desc": "A debloater script to remove all Google apps",
+  "version": "1.0",
+  "authors": [
+    "Aurora OSS"
+  ],
+  "source": "https://auroraoss.com/warden/scripts",
+  "packages": [
+    "com.google.android.apps.books",
+    "com.google.android.apps.docs",
+    "com.google.android.apps.magazines",
+    "com.google.android.apps.maps",
+    "com.google.android.apps.plus",
+    "com.google.android.apps.tachyon",
+    "com.google.android.gm",
+    "com.google.android.googlequicksearchbox",
+    "com.google.android.printservice.recommendation",
+    "com.google.android.talk",
+    "com.google.android.tts",
+    "com.google.android.videos",
+    "com.google.android.youtube",
+    "com.google.ar.core",
+    "com.google.vr.vrcore"
+  ]
+}
