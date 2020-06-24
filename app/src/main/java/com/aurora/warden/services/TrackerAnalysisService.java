@@ -120,7 +120,6 @@ public class TrackerAnalysisService extends Service {
     private void startAnalysis() {
         final PackageManager packageManager = getPackageManager();
         disposable.add(Observable.fromIterable(new AppsTask(getApplication()).getAllPackages())
-                .take(4)
                 .map(packageInfo -> {
                     try {
                         final App app = PackageUtil.getMinimalAppByPackageInfo(packageManager, packageInfo);

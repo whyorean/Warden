@@ -86,7 +86,7 @@ public class LabFragment extends Fragment {
 
     @OnClick(R.id.btn_nuke)
     public void disableAllTrackers() {
-        if (TrackerAnalysisService.isServiceRunning()) {
+        if (!TrackerAnalysisService.isServiceRunning()) {
             showBottomSheet(new NukeSheet(), 0, getString(R.string.action_nuke_it));
         } else {
             Toast.makeText(requireContext(), R.string.string_nuke_running, Toast.LENGTH_SHORT).show();
