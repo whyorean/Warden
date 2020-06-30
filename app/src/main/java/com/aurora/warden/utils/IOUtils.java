@@ -19,6 +19,8 @@
 
 package com.aurora.warden.utils;
 
+import android.content.Context;
+
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -63,5 +65,31 @@ public class IOUtils {
             count += n;
         }
         return count;
+    }
+
+    public static void deleteCache(Context context) {
+        try {
+            File dir = context.getCacheDir();
+            deleteDirRecursive(dir);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static boolean deleteDirRecursive(File directory) {
+        if (directory != null && directory.isDirectory()) {
+            String[] children = directory.list();
+            for (String child : children) {
+                boolean success = deleteDirRecursive(new File(directory, child));
+                if (!success) {
+                    return false;
+                }
+            }
+            return directory.delete();
+        } else if (directory != null && directory.isFile()) {
+            return directory.delete();
+        } else {
+            return false;
+        }
     }
 }
