@@ -393,7 +393,6 @@ public class AppDetailsActivity extends BaseActivity implements AppQueryUtil.Cal
         bundle.putString(Constants.STRING_EXTRA, packageName);
         bundle.putInt(Constants.INT_EXTRA, componentType);
         baseBottomSheet.setArguments(bundle);
-        baseBottomSheet.setCancelable(false);
         fragmentManager.beginTransaction()
                 .add(baseBottomSheet, ComponentSheet.TAG)
                 .commitAllowingStateLoss();

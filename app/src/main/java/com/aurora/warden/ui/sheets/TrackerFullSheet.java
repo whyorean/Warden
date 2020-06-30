@@ -19,15 +19,12 @@
 
 package com.aurora.warden.ui.sheets;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -36,8 +33,6 @@ import com.aurora.warden.Constants;
 import com.aurora.warden.R;
 import com.aurora.warden.data.model.Tracker;
 import com.bumptech.glide.Glide;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -61,45 +56,6 @@ public class TrackerFullSheet extends BaseBottomSheet {
     AppCompatTextView subtitle;
     @BindView(R.id.text_description)
     TextView textDescription;
-
-    @NonNull
-    @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext(), R.style.Aurora_BottomSheetDialog);
-
-        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.sheet_base, null);
-        bottomSheetDialog.setContentView(dialogView);
-
-        FrameLayout container = dialogView.findViewById(R.id.container);
-        View contentView = onCreateContentView(LayoutInflater.from(requireContext()), container, savedInstanceState);
-        if (contentView != null) {
-            onContentViewCreated(contentView, savedInstanceState);
-            container.addView(contentView);
-        }
-
-        bottomSheetDialog.setOnShowListener(d -> {
-            FrameLayout bottomSheet = bottomSheetDialog.findViewById(com.google.android.material.R.id.design_bottom_sheet);
-            if (bottomSheet != null)
-                BottomSheetBehavior.from(bottomSheet).setState(BottomSheetBehavior.STATE_EXPANDED);
-        });
-
-        BottomSheetBehavior<FrameLayout> bottomSheetBehavior = bottomSheetDialog.getBehavior();
-        bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-            @Override
-            public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                if (newState == BottomSheetBehavior.STATE_DRAGGING) {
-                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-                }
-            }
-
-            @Override
-            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
-            }
-        });
-
-        return bottomSheetDialog;
-    }
 
     @Nullable
     @Override

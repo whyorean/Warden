@@ -121,7 +121,6 @@ public class AnalyticsActivity extends BaseActivity {
 
         if (fragment != null)
             fragmentManager.beginTransaction().remove(fragment).commitAllowingStateLoss();
-        componentSheet.setCancelable(false);
         fragmentManager.beginTransaction()
                 .add(componentSheet, ComponentSheet.TAG)
                 .commitAllowingStateLoss();
