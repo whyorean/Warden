@@ -18,6 +18,7 @@
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
@@ -44,7 +45,7 @@
         android:layout_marginEnd="@dimen/margin_xsmall"
         android:background="?colorAccent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <com.robinhood.ticker.TickerView
         android:id="@+id/txt_secondary"
         style="@style/AuroraTextStyle.Title"
         android:layout_width="match_parent"
@@ -53,5 +54,8 @@
         android:layout_toEndOf="@id/divider"
         android:text="@string/app_name"
         android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.Aurora.Title.Secondary" />
+        android:textAppearance="@style/TextAppearance.Aurora.Title.Secondary"
+        app:ticker_animateMeasurementChange="true"
+        app:ticker_animationDuration="400"
+        app:ticker_defaultCharacterList="alphabet" />
 </RelativeLayout>

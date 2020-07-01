@@ -52,11 +52,11 @@ buildscript {
                 fastAdapter: "5.0.0",
                 lambok     : "1.18.10",
                 butterknife: "10.2.1",
-                navigation : "2.2.2",
+                navigation : "2.3.0",
                 lifeCycle  : "2.2.0",
                 worker     : "2.3.4",
                 room       : "2.2.5",
-                retro      : "2.8.1",
+                retro      : "2.9.0",
                 libsu      : "2.5.1",
                 markwon    : "4.4.0"
         ]
@@ -67,7 +67,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.preference:preference:1.1.1'
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     //Goolag Shit
@@ -90,6 +90,7 @@ dependencies {
     implementation 'nl.dionsegijn:konfetti:1.2.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.florent37:expansionpanel:1.2.2'
+    implementation 'com.robinhood.ticker:ticker:2.0.2'
 
     //Markon
     implementation "io.noties.markwon:core:${versions.markwon}"
@@ -119,7 +120,7 @@ dependencies {
 
     //RetroFit
     implementation "com.squareup.retrofit2:retrofit:${versions.retro}"
-    implementation "com.squareup.retrofit2:converter-gson:2.6.2"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
     //LibSU
     implementation "com.github.topjohnwu.libsu:core:${versions.libsu}"

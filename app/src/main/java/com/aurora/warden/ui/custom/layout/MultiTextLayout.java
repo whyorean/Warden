@@ -32,6 +32,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 import com.aurora.warden.R;
 import com.aurora.warden.utils.ViewUtil;
+import com.robinhood.ticker.TickerView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +42,7 @@ public class MultiTextLayout extends RelativeLayout {
     @BindView(R.id.txt_primary)
     AppCompatTextView txtPrimary;
     @BindView(R.id.txt_secondary)
-    AppCompatTextView txtSecondary;
+    TickerView txtSecondary;
     @BindView(R.id.divider)
     View divider;
 
@@ -95,8 +96,8 @@ public class MultiTextLayout extends RelativeLayout {
     }
 
     public void setTxtSecondary(String text) {
-        ViewUtil.switchToolbarText(getContext(), txtSecondary, text);
-        //txtSecondary.setText(text);
+        //ViewUtil.switchToolbarText(getContext(), txtSecondary, text);
+        txtSecondary.setText(text.toUpperCase());
         invalidate();
     }
 
