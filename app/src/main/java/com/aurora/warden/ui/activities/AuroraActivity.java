@@ -209,7 +209,7 @@ public class AuroraActivity extends BaseActivity {
             public void onResponse(@NotNull Call<Update> call, @NotNull Response<Update> response) {
                 if (response.isSuccessful()) {
                     final Update update = response.body();
-                    if (update != null && update.getVersionCode() > 0) {
+                    if (update != null && update.getVersionCode() > BuildConfig.VERSION_CODE) {
                         showUpdateSheet(update);
                     } else {
                         Log.d(getString(R.string.update_unavailable));
