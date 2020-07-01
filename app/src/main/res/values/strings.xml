@@ -58,6 +58,7 @@
     <string name="action_scanning">"Scanning"</string>
     <string name="action_search_back">"Back to search"</string>
     <string name="action_show_components">"Components"</string>
+    <string name="action_sort_by">Sort by</string>
     <string name="action_suspend">"Suspend"</string>
     <string name="action_trackers">"Trackers"</string>
     <string name="action_unhide">"Unhide"</string>
@@ -79,6 +80,14 @@
     <string name="details_title_sdk">"Target SDK"</string>
     <string name="details_title_space">Space used</string>
     <string name="details_title_updated">"Last updated"</string>
+
+    <string name="filter_name_az">Name A-Z</string>
+    <string name="filter_name_za">Name Z-A</string>
+    <string name="filter_size">Size</string>
+    <string name="filter_uid">UID</string>
+    <string name="filter_package">Package</string>
+    <string name="filter_date_updated">Date Updated</string>
+    <string name="filter_date_installed">Date Installed</string>
 
     <string name="menu_about">"About"</string>
     <string name="menu_apps">"Apps"</string>

@@ -26,6 +26,8 @@ import com.aurora.warden.data.model.Tracker;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
@@ -59,10 +61,7 @@ public class StaticDataProvider {
         try {
             final InputStream inputStream = context.getAssets().open("trackers.json");
             final byte[] bytes = new byte[inputStream.available()];
-
-            inputStream.read(bytes);
-            inputStream.close();
-
+            IOUtils.read(inputStream, bytes);
             final String json = new String(bytes, StandardCharsets.UTF_8);
             final Type type = new TypeToken<HashMap<Integer, Tracker>>() {
             }.getType();
@@ -76,10 +75,7 @@ public class StaticDataProvider {
         try {
             final InputStream inputStream = context.getAssets().open("loggers.json");
             final byte[] bytes = new byte[inputStream.available()];
-
-            inputStream.read(bytes);
-            inputStream.close();
-
+            IOUtils.read(inputStream, bytes);
             final String json = new String(bytes, StandardCharsets.UTF_8);
             final Type type = new TypeToken<HashMap<Integer, Logger>>() {
             }.getType();

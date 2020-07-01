@@ -60,6 +60,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import me.zhanghai.android.fastscroll.FastScrollerBuilder;
 
 public class AnalyticsFragment extends Fragment {
 
@@ -103,6 +104,7 @@ public class AnalyticsFragment extends Fragment {
                     .delay(200, TimeUnit.MILLISECONDS)
                     .flatMap(objects -> Observable.fromIterable(objects)
                             .filter(tracker -> trackerIdSet.contains(tracker.getId()))
+                            .sorted((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()))
                             .map(TrackerItem::new))
                     .toList()
                     .subscribeOn(Schedulers.io())
@@ -118,6 +120,14 @@ public class AnalyticsFragment extends Fragment {
                 ? StaticDataProvider.getInstance(requireContext()).getKnownTrackersList().values()
                 : StaticDataProvider.getInstance(requireContext()).getKnownLoggerList().values())
                 .flatMap(objects -> Observable.fromIterable(objects)
+                        .sorted((o1, o2) -> {
+                            if (o1 instanceof Tracker && o2 instanceof Tracker) {
+                                return ((Tracker) o1).getName()
+                                        .compareToIgnoreCase(((Tracker) o2).getName());
+                            } else
+                                return ((Logger) o1).getName()
+                                        .compareToIgnoreCase(((Logger) o2).getName());
+                        })
                         .map(obj -> {
                             if (obj instanceof Tracker)
                                 return new TrackerItem((Tracker) obj);
@@ -154,6 +164,10 @@ public class AnalyticsFragment extends Fragment {
         recycler.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
         recycler.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(requireContext(), R.anim.layout_animation_fall_down));
         recycler.setAdapter(fastAdapter);
+
+        new FastScrollerBuilder(recycler)
+                .useMd2Style()
+                .build();
     }
 
     private void openTrackerFullSheet(Tracker tracker) {

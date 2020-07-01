@@ -87,7 +87,10 @@ public class AppItem extends ListItem {
                 App app = ((AppItem) item).getApp();
                 line1.setText(app.getDisplayName());
                 line2.setText(app.getPackageName());
-                line3.setText(StringUtils.joinWith(".", app.getVersionName(), app.getVersionCode()));
+                line3.setText(StringUtils.joinWith(" \u2022 ",
+                        StringUtils.joinWith(".", app.getVersionName(), app.getVersionCode()),
+                        app.getUid()
+                ));
                 img.setImageDrawable(app.getIconDrawable());
             }
         }
