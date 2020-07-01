@@ -23,6 +23,7 @@ public class Constants {
 
     public static final String TAG = "Warden";
     public static final String SHARED_PREFERENCES_KEY = "com.aurora.warden";
+    public static final String UPDATE_URL = "https://gitlab.com/AuroraOSS/AppWarden/raw/master/updates.json";
 
     public static final String NOTIFICATION_CHANNEL_ALERT = "NOTIFICATION_CHANNEL_ALERT";
     public static final String NOTIFICATION_CHANNEL_SERVICE = "NOTIFICATION_CHANNEL_SERVICE";

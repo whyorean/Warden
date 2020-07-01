@@ -24,6 +24,7 @@
 
     <color name="colorScrim">#22000000</color>
     <color name="colorScrimAccent">#226c63ff</color>
+    <color name="colorTransparent">#00000000</color>
 
     <!--More Colors-->
     <color name="colorWarden">#6c63ff</color>

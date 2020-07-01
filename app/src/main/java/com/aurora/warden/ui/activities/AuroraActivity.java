@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
@@ -30,25 +31,38 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.aurora.warden.AuroraApplication;
+import com.aurora.warden.BuildConfig;
 import com.aurora.warden.Constants;
 import com.aurora.warden.R;
+import com.aurora.warden.data.model.Update;
 import com.aurora.warden.events.Event;
+import com.aurora.warden.retro.RetroClient;
+import com.aurora.warden.retro.UpdateService;
 import com.aurora.warden.ui.custom.layout.MultiTextLayout;
+import com.aurora.warden.ui.sheets.UpdateSheet;
+import com.aurora.warden.utils.Log;
 import com.aurora.warden.utils.ViewUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
+
+import org.jetbrains.annotations.NotNull;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AuroraActivity extends BaseActivity {
     @BindView(R.id.action1)
@@ -82,6 +96,7 @@ public class AuroraActivity extends BaseActivity {
         setupToolbar();
         setupNavigation();
         setupDrawer();
+        setupSelfUpdate();
     }
 
     @Override
@@ -184,5 +199,45 @@ public class AuroraActivity extends BaseActivity {
             }
             return false;
         });
+    }
+
+    private void setupSelfUpdate() {
+        UpdateService downloadService = RetroClient.getInstance().create(UpdateService.class);
+        Call<Update> call = downloadService.checkUpdate(Constants.UPDATE_URL);
+        call.enqueue(new Callback<Update>() {
+            @Override
+            public void onResponse(@NotNull Call<Update> call, @NotNull Response<Update> response) {
+                if (response.isSuccessful()) {
+                    final Update update = response.body();
+                    if (update != null && update.getVersionCode() > 0) {
+                        showUpdateSheet(update);
+                    } else {
+                        Log.d(getString(R.string.update_unavailable));
+                    }
+                } else {
+                    Log.d(getString(R.string.update_failed));
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<Update> call, @NotNull Throwable throwable) {
+                Toast.makeText(AuroraActivity.this, getString(R.string.update_failed),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void showUpdateSheet(Update update) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        if (fragmentManager.findFragmentByTag(UpdateSheet.TAG) == null) {
+            final UpdateSheet updateSheet = new UpdateSheet();
+            final Bundle bundle = new Bundle();
+            bundle.putString(Constants.STRING_EXTRA, new Gson().toJson(update));
+            updateSheet.setArguments(bundle);
+            fragmentManager
+                    .beginTransaction()
+                    .add(updateSheet, UpdateSheet.TAG)
+                    .commitAllowingStateLoss();
+        }
     }
 }

@@ -23,10 +23,8 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 public class Update {
     @SerializedName("version_name")
     @Expose
@@ -34,9 +32,12 @@ public class Update {
     @SerializedName("version_code")
     @Expose
     private Integer versionCode;
-    @SerializedName("url")
+    @SerializedName("aurora_build")
     @Expose
-    private String url;
+    private String auroraBuild;
+    @SerializedName("fdroid_build")
+    @Expose
+    private String fdroidBuild;
     @SerializedName("changelog")
     @Expose
     private String changelog;

@@ -48,6 +48,7 @@
     <string name="action_failed">"Failed!"</string>
     <string name="action_grant">"Grant"</string>
     <string name="action_hide">"Hide"</string>
+    <string name="action_ignore">"Ignore"</string>
     <string name="action_later">"Later"</string>
     <string name="action_loading">"Loading"</string>
     <string name="action_loggers">"Loggers"</string>
@@ -62,6 +63,7 @@
     <string name="action_unhide">"Unhide"</string>
     <string name="action_uninstall">"Uninstall"</string>
     <string name="action_unsuspend">"Unsuspend"</string>
+    <string name="action_update">"Update now"</string>
     <string name="action_view_report">"View Report"</string>
 
     <string name="app_aurora" translatable="false">"Aurora"</string>
@@ -129,6 +131,12 @@
     <string name="preferences_theme_title">"Select theme"</string>
     <string name="preferences_device_awake">"Keep device awake"</string>
     <string name="preferences_device_awake_desc">"Prevents device from sleeping while scan is in progress."</string>
+
+    <string name="update_title">"Update"</string>
+    <string name="update_desc">"New app update available"</string>
+    <string name="update_changes">"Changelog"</string>
+    <string name="update_failed">"Update failed"</string>
+    <string name="update_unavailable">"No new version available"</string>
 
     <string name="string_info_logger_no_desc">"However, the app might still be doing logging stuff, as not all available loggers are known to warden."</string>
     <string name="string_info_logger_no_title">"Yay! No loggers"</string>

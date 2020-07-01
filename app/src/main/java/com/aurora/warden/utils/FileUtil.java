@@ -25,6 +25,10 @@ import java.io.File;
 
 public class FileUtil {
 
+    public static String getFileName(String url) {
+        return url.substring(url.lastIndexOf('/') + 1);
+    }
+
     public static void deleteCache(Context context) {
         try {
             File dir = context.getCacheDir();
