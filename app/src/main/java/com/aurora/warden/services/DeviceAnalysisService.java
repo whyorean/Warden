@@ -47,7 +47,7 @@ import com.aurora.warden.events.Event;
 import com.aurora.warden.tasks.ApkClassTask;
 import com.aurora.warden.tasks.AppsTask;
 import com.aurora.warden.tasks.CodeAnalyzerTask;
-import com.aurora.warden.utils.IOUtils;
+import com.aurora.warden.utils.FileUtil;
 import com.aurora.warden.utils.Log;
 import com.aurora.warden.utils.Util;
 import com.aurora.warden.utils.ViewUtil;
@@ -260,7 +260,7 @@ public class DeviceAnalysisService extends Service {
                 AuroraApplication.rxNotify(new Event(Event.SubType.SCAN_CANCELED));
             }
             //Clear cache
-            IOUtils.deleteCache(this);
+            FileUtil.deleteCache(this);
             instance = null;
         } catch (Exception e) {
             e.printStackTrace();

@@ -44,7 +44,7 @@ import com.aurora.warden.manager.camtono.CamtonoManager;
 import com.aurora.warden.tasks.ApkClassTask;
 import com.aurora.warden.tasks.AppsTask;
 import com.aurora.warden.tasks.ComponentAnalyzerTask;
-import com.aurora.warden.utils.IOUtils;
+import com.aurora.warden.utils.FileUtil;
 import com.aurora.warden.utils.Log;
 import com.aurora.warden.utils.ViewUtil;
 import com.aurora.warden.utils.app.PackageUtil;
@@ -248,7 +248,7 @@ public class TrackerAnalysisService extends Service {
             disposable.dispose();
             notificationManager.cancel(Constants.TAG, Constants.TAG.hashCode());
             //Clear cache
-            IOUtils.deleteCache(this);
+            FileUtil.deleteCache(this);
             instance = null;
         } catch (Exception e) {
             e.printStackTrace();

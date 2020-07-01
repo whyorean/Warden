@@ -123,8 +123,6 @@ public class AuroraApplication extends Application {
         registerReceiver(globalInstallReceiver, getFilter());
 
         RxJavaPlugins.setErrorHandler(err -> Log.e(err.getMessage()));
-        RxJavaPlugins.setErrorHandler(err -> {
-        });
     }
 
     @Override

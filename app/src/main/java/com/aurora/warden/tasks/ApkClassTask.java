@@ -22,8 +22,9 @@ package com.aurora.warden.tasks;
 import android.content.Context;
 import android.net.Uri;
 
-import com.aurora.warden.utils.IOUtils;
 import com.aurora.warden.utils.Log;
+
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.InputStream;
@@ -44,23 +45,23 @@ public class ApkClassTask {
     }
 
     public Set<String> getAllClasses() {
-
         final Set<String> classNameList = new HashSet<>();
 
+        File classFile = null;
+        File optimizedFile = null;
+
         try {
-            final InputStream uriStream = context.getContentResolver().openInputStream(uri);
+            final InputStream inputStream = context.getContentResolver().openInputStream(uri);
 
-            final byte[] bytes = IOUtils.toByteArray(uriStream);
-
-            final File classFile = File.createTempFile("classes" + Thread.currentThread().getId(),
+            classFile = File.createTempFile("classes" + Thread.currentThread().getId(),
                     ".dex",
                     context.getCacheDir());
 
-            final File optimizedFile = File.createTempFile("opt" + Thread.currentThread().getId(),
+            optimizedFile = File.createTempFile("opt" + Thread.currentThread().getId(),
                     ".dex",
                     context.getCacheDir());
 
-            IOUtils.bytesToFile(bytes, classFile);
+            FileUtils.copyInputStreamToFile(inputStream, classFile);
 
             final DexFile dexFile = DexFile.loadDex(classFile.getPath(), optimizedFile.getPath(), 0);
 
@@ -69,29 +70,14 @@ public class ApkClassTask {
                 if (className.length() >= 8 && className.contains("."))
                     classNameList.add(className);
             }
-
-            //Cleanup residual DEX files
-            optimizedFile.delete();
-            classFile.delete();
-
         } catch (Exception e) {
-            clearCache();
             Log.e(e.getMessage());
-        }
-        return classNameList;
-    }
-
-    private void clearCache() {
-        final File cache = context.getCacheDir();
-        if (cache.exists()) {
-            final File[] children = cache.listFiles();
-            if (children != null) {
-                for (File file : children) {
-                    if (!file.getName().endsWith(".dex")) {
-                        file.delete();
-                    }
-                }
+        } finally {
+            if (classFile != null && optimizedFile != null) {
+                optimizedFile.delete();
+                classFile.delete();
             }
         }
+        return classNameList;
     }
 }
