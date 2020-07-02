@@ -43,13 +43,13 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_title"
+                style="@style/AuroraTextStyle.Subtitle.Alt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginBottom="@dimen/margin_small"
-                android:text="@string/title_search"
-                android:textAppearance="@style/TextAppearance.Aurora.SubTitle.Alt" />
+                android:text="@string/title_search" />
 
             <RelativeLayout
                 android:id="@+id/layout_search"

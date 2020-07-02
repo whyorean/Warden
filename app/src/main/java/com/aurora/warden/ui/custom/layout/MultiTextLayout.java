@@ -29,6 +29,7 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.aurora.warden.R;
 import com.aurora.warden.utils.ViewUtil;
@@ -85,6 +86,8 @@ public class MultiTextLayout extends RelativeLayout {
         txtPrimary.setTextColor(colorPrimary);
         txtSecondary.setText(textSecondary);
         txtSecondary.setTextColor(colorSecondary);
+        txtSecondary.setTextSize(txtPrimary.getPaint().getTextSize());
+        txtSecondary.setTypeface(ResourcesCompat.getFont(context, R.font.montserrat_light));
         divider.setBackgroundColor(colorDivider);
 
         typedArray.recycle();

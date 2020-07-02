@@ -39,14 +39,14 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AuroraTextStyle.Subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/margin_normal"
                 android:paddingTop="@dimen/margin_small"
                 android:paddingEnd="@dimen/margin_xsmall"
                 android:paddingBottom="@dimen/margin_small"
-                android:text="@string/action_sort_by"
-                android:textAppearance="@style/TextAppearance.Aurora.SubTitle" />
+                android:text="@string/action_sort_by" />
 
             <include layout="@layout/include_filters" />
 

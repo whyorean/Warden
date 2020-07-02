@@ -41,7 +41,6 @@
         android:layout_centerHorizontal="true"
         android:requiresFadingEdge="horizontal"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.Aurora.Title"
         android:transitionName="line1"
         tools:text="@string/app_name" />
 

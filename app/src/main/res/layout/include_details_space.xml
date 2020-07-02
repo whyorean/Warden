@@ -39,14 +39,14 @@
             android:layout_height="match_parent">
 
             <TextView
+                style="@style/AuroraTextStyle.Subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@id/headerIndicator"
                 android:letterSpacing="0.025"
-                android:text="@string/details_title_space"
-                android:textAppearance="@style/TextAppearance.Aurora.SubTitle" />
+                android:text="@string/details_title_space" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/headerIndicator"

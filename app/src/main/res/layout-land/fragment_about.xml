@@ -44,13 +44,13 @@
 
             <TextView
                 android:id="@+id/app_name"
+                style="@style/AuroraTextStyle.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/launcher_icon"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/margin_small"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.Aurora.Title" />
+                android:text="@string/app_name" />
 
             <TextView
                 android:id="@+id/line2"
@@ -89,14 +89,13 @@
 
                 <TextView
                     android:id="@+id/txt_title"
+                    style="@style/AuroraTextStyle.Subtitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_small"
                     android:paddingStart="@dimen/padding_normal"
                     android:paddingEnd="@dimen/padding_normal"
-                    android:text="@string/title_credits"
-                    android:textAppearance="@style/TextAppearance.Aurora.SubTitle"
-                    android:textSize="20sp" />
+                    android:text="@string/title_credits" />
 
                 <LinearLayout
                     android:id="@+id/container"
@@ -107,6 +106,7 @@
 
                 <TextView
                     android:id="@+id/txt_donations"
+                    style="@style/AuroraTextStyle.Subtitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/container"
@@ -114,9 +114,7 @@
                     android:layout_marginTop="@dimen/margin_small"
                     android:paddingStart="@dimen/padding_normal"
                     android:paddingEnd="@dimen/padding_normal"
-                    android:text="@string/title_links"
-                    android:textAppearance="@style/TextAppearance.Aurora.SubTitle"
-                    android:textSize="20sp" />
+                    android:text="@string/title_links" />
 
                 <LinearLayout
                     android:id="@+id/donations"

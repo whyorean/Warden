@@ -25,10 +25,10 @@
     android:padding="@dimen/padding_normal">
 
     <TextView
+        style="@style/AuroraTextStyle.Subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/details_title_package_info"
-        android:textAppearance="@style/TextAppearance.Aurora.SubTitle" />
+        android:text="@string/details_title_package_info" />
 
     <LinearLayout
         android:layout_width="match_parent"

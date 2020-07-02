@@ -30,6 +30,7 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/AuroraTextStyle.Title"
             android:id="@+id/txt_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +40,6 @@
             android:paddingStart="@dimen/padding_normal"
             android:paddingEnd="@dimen/padding_normal"
             android:text="@string/update_title"
-            android:textAppearance="@style/TextAppearance.Aurora.Title"
             android:textColor="?colorAccent" />
 
         <TextView

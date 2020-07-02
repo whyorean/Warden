@@ -56,7 +56,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/action_scanning"
-                android:textAppearance="@style/TextAppearance.Aurora.SubTitle.Alt"
                 android:textColor="?colorAccent" />
         </RelativeLayout>
 

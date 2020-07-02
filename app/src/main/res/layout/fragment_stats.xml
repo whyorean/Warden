@@ -17,39 +17,40 @@
   ~
   -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10">
 
     <ViewFlipper
         android:id="@+id/view_flipper"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="6"
         android:clipToPadding="false"
         android:padding="@dimen/padding_small">
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/top_tracker_chart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="320dp" />
+            android:layout_height="match_parent" />
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/top_logger_chart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="320dp" />
+            android:layout_height="match_parent" />
     </ViewFlipper>
 
     <RelativeLayout
         android:id="@+id/layout_chip"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:layout_below="@id/view_flipper"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_small"
-        android:layout_marginEnd="@dimen/margin_small">
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_weight="1">
 
         <com.google.android.material.chip.ChipGroup
             android:layout_width="wrap_content"
@@ -77,9 +78,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/layout_timestamp"
-        android:layout_below="@id/layout_chip"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:gravity="center"
         android:padding="@dimen/padding_small">
 
@@ -115,9 +115,9 @@
     <RelativeLayout
         android:id="@+id/layout_timestamp"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:layout_alignParentBottom="true"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_small"
+        android:layout_weight="1"
         android:visibility="invisible"
         tools:visibility="visible">
 
@@ -131,4 +131,4 @@
             android:textSize="14sp"
             tools:text="Today" />
     </RelativeLayout>
-</RelativeLayout>
+</LinearLayout>

@@ -26,14 +26,13 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_primary"
-        style="@style/AuroraTextStyle.Title"
+        style="@style/AuroraTextStyle.Title.Primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toStartOf="@id/divider"
         android:text="@string/app_aurora"
-        android:textAlignment="viewEnd"
-        android:textAppearance="@style/TextAppearance.Aurora.Title.Primary" />
+        android:textAlignment="viewEnd" />
 
     <View
         android:id="@+id/divider"
@@ -47,14 +46,13 @@
 
     <com.robinhood.ticker.TickerView
         android:id="@+id/txt_secondary"
-        style="@style/AuroraTextStyle.Title"
+        style="@style/AuroraTextStyle.Title.Secondary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/divider"
         android:text="@string/app_name"
         android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.Aurora.Title.Secondary"
         app:ticker_animateMeasurementChange="true"
         app:ticker_animationDuration="400"
         app:ticker_defaultCharacterList="alphabet" />

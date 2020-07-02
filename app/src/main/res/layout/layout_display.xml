@@ -18,7 +18,6 @@
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,23 +26,21 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_primary"
-        style="@style/AuroraTextStyle.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/app_aurora"
-        android:textAppearance="@style/TextAppearance.Aurora.Title.Primary"
+        android:textAppearance="@style/TextAppearance.Aurora.Title"
         android:textSize="32sp"
-        app:autoSizeMaxTextSize="32sp"
         tools:text="82" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_secondary"
-        style="@style/AuroraTextStyle.Title"
+        style="@style/AuroraTextStyle.Title.Secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_primary"
         android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.Aurora.Title.Secondary"
+        android:textAlignment="center"
         tools:text="apps" />
 </RelativeLayout>

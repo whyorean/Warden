@@ -22,13 +22,13 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_primary"
+        style="@style/AuroraTextStyle.Subtitle.Alt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/txt_secondary"
         android:layout_centerInParent="true"
         android:layout_marginBottom="@dimen/margin_small"
-        android:text="@string/string_info_tracker_no_title"
-        android:textAppearance="@style/TextAppearance.Aurora.SubTitle.Alt" />
+        android:text="@string/string_info_tracker_no_title" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_secondary"

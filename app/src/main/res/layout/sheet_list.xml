@@ -54,7 +54,6 @@
             android:layout_toEndOf="@id/img_placeholder"
             android:text="@string/menu_apps"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.Aurora.Title"
             android:textColor="?android:attr/colorAccent" />
 
         <androidx.appcompat.widget.AppCompatImageView

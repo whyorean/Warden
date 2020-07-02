@@ -19,6 +19,8 @@
 
 <resources>
 
+    <!-- Title Styles -->
+
     <style name="AuroraTextStyle" parent="Widget.AppCompat.TextView">
         <item name="autoSizeTextType">uniform</item>
         <item name="autoSizeMinTextSize">10sp</item>
@@ -35,6 +37,15 @@
         <item name="android:ellipsize">end</item>
         <item name="autoSizeMaxTextSize">20sp</item>
         <item name="android:autoSizeMaxTextSize">20sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Aurora.Title</item>
+    </style>
+
+    <style name="AuroraTextStyle.Title.Primary" parent="AuroraTextStyle.Title">
+        <item name="android:textAppearance">@style/TextAppearance.Aurora.Title.Primary</item>
+    </style>
+
+    <style name="AuroraTextStyle.Title.Secondary" parent="AuroraTextStyle.Title">
+        <item name="android:textAppearance">@style/TextAppearance.Aurora.Title.Secondary</item>
     </style>
 
     <style name="TextAppearance.Aurora.Title" parent="TextAppearance.AppCompat.Medium">
@@ -57,14 +68,19 @@
         <item name="android:fontFamily">@font/montserrat_light</item>
     </style>
 
+
+    <!--  Subtitle Styles  -->
+
     <style name="AuroraTextStyle.Subtitle" parent="AuroraTextStyle">
         <item name="autoSizeMaxTextSize">16sp</item>
         <item name="android:autoSizeMaxTextSize">16sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Aurora.SubTitle</item>
     </style>
 
     <style name="AuroraTextStyle.Subtitle.Alt" parent="AuroraTextStyle">
         <item name="autoSizeMaxTextSize">18sp</item>
         <item name="android:autoSizeMaxTextSize">18sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Aurora.SubTitle.Alt</item>
     </style>
 
     <style name="TextAppearance.Aurora.SubTitle" parent="TextAppearance.Aurora.Title">
@@ -76,6 +92,8 @@
         <item name="android:fontFamily">@font/montserrat_regular</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <!-- Line Styles -->
 
     <style name="TextAppearance.Aurora.Line1" parent="TextAppearance.AppCompat.Medium">
         <item name="android:ellipsize">end</item>
