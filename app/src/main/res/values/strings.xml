@@ -148,10 +148,12 @@
 
     <string name="preference_analysis_header">"Static Analysis"</string>
     <string name="preference_debloat_header">"Debloater"</string>
+    <string name="preference_nuke_header">"Nuke it!"</string>
     <string name="preference_ui_header">"User Interface"</string>
     <string name="preferences_debloat">"Default debloat action"</string>
     <string name="preferences_include_system">"Include System Apps"</string>
     <string name="preferences_include_system_desc">"Scans system apps as well for trackers &amp; loggers"</string>
+    <string name="preferences_include_system_nuke">"Nuke matching trackers &amp; loggers for system apps"</string>
     <string name="preferences_theme_title">"Select theme"</string>
     <string name="preferences_device_awake">"Keep device awake"</string>
     <string name="preferences_device_awake_desc">"Prevents device from sleeping while scan is in progress."</string>

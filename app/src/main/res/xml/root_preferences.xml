@@ -45,6 +45,15 @@
             app:title="@string/preferences_device_awake" />
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="@string/preference_nuke_header">
+
+        <SwitchPreference
+            app:defaultValue="false"
+            app:key="PREFERENCE_INCLUDE_SYSTEM_NUKE"
+            app:summary="@string/preferences_include_system_nuke"
+            app:title="@string/preferences_include_system" />
+    </PreferenceCategory>
+
     <PreferenceCategory app:title="@string/preference_debloat_header">
 
         <ListPreference

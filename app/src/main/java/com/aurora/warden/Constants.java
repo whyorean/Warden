@@ -38,6 +38,7 @@ public class Constants {
     public static final String PREFERENCE_THEME = "PREFERENCE_THEME";
     public static final String PREFERENCE_HIDDEN_APPS = "PREFERENCE_HIDDEN_APPS";
     public static final String PREFERENCE_INCLUDE_SYSTEM = "PREFERENCE_INCLUDE_SYSTEM";
+    public static final String PREFERENCE_INCLUDE_SYSTEM_NUKE = "PREFERENCE_INCLUDE_SYSTEM_NUKE";
     public static final String PREFERENCE_DEVICE_AWAKE = "PREFERENCE_DEVICE_AWAKE";
     public static final String PREFERENCE_DEBLOAT_ACTION = "PREFERENCE_DEBLOAT_ACTION";
     public static final String PREFERENCE_FILTER = "PREFERENCE_FILTER";

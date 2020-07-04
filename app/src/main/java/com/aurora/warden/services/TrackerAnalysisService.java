@@ -25,6 +25,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.ComponentInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -46,6 +47,7 @@ import com.aurora.warden.tasks.AppsTask;
 import com.aurora.warden.tasks.ComponentAnalyzerTask;
 import com.aurora.warden.utils.FileUtil;
 import com.aurora.warden.utils.Log;
+import com.aurora.warden.utils.Util;
 import com.aurora.warden.utils.ViewUtil;
 import com.aurora.warden.utils.app.PackageUtil;
 import com.google.gson.Gson;
@@ -77,7 +79,9 @@ public class TrackerAnalysisService extends Service {
     private CamtonoManager camtonoManager;
     private CompositeDisposable disposable = new CompositeDisposable();
     private Gson gson = new GsonBuilder().excludeFieldsWithModifiers(Modifier.TRANSIENT).create();
+
     private boolean isExportEnabled = false;
+    private boolean isSystemNukeEnabled = false;
 
     public static boolean isServiceRunning() {
         try {
@@ -112,6 +116,7 @@ public class TrackerAnalysisService extends Service {
         instance = this;
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         camtonoManager = CamtonoManager.getInstance(this);
+        isSystemNukeEnabled = Util.isSystemNukeEnabled(this);
 
         AuroraApplication.rxNotify(new Event(Event.SubType.NUKE_INIT));
 
@@ -121,6 +126,17 @@ public class TrackerAnalysisService extends Service {
     private void startAnalysis() {
         final PackageManager packageManager = getPackageManager();
         disposable.add(Observable.fromIterable(new AppsTask(getApplication()).getAllPackages())
+                .filter(packageInfo -> {
+                    boolean isSystemApp = (packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 1;
+
+                    //Add all non-system apps
+                    if (!isSystemApp) {
+                        return true;
+                    }
+
+                    //Add all system apps if include-system is enabled
+                    return isSystemNukeEnabled;
+                })
                 .map(packageInfo -> {
                     try {
                         final App app = PackageUtil.getMinimalAppByPackageInfo(packageManager, packageInfo);

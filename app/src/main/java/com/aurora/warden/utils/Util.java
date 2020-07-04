@@ -43,6 +43,10 @@ public class Util {
         return PrefUtil.getBoolean(context, Constants.PREFERENCE_INCLUDE_SYSTEM);
     }
 
+    public static boolean isSystemNukeEnabled(Context context) {
+        return PrefUtil.getBoolean(context, Constants.PREFERENCE_INCLUDE_SYSTEM_NUKE);
+    }
+
     public static boolean isKeepAwakeEnabled(Context context) {
         return PrefUtil.getBoolean(context, Constants.PREFERENCE_DEVICE_AWAKE);
     }

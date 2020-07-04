@@ -24,6 +24,7 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.IBinder;
@@ -82,6 +83,8 @@ public class DeviceAnalysisService extends Service {
     private CompositeDisposable disposable = new CompositeDisposable();
 
     private boolean completed = false;
+    private boolean isSystemEnabled = false;
+
     private StaticReport staticReport;
     private WardenDatabase wardenDatabase;
     private ReportDataSource reportDataSource;
@@ -119,11 +122,12 @@ public class DeviceAnalysisService extends Service {
         wardenDatabase = WardenDatabase.getInstance(getApplicationContext());
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        isSystemEnabled = Util.isSystemEnabled(this);
 
         if (Util.isKeepAwakeEnabled(this)) {
             if (powerManager != null) {
                 wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Warden::DoNotSleep");
-                wakeLock.acquire(5 * 60 * 1000L /*Max 5 minutes, it should not ideally exceed this limit*/);
+                wakeLock.acquire(8 * 60 * 1000L /*Max 8 minutes, it should not ideally exceed this limit*/);
             }
         }
 
@@ -142,6 +146,17 @@ public class DeviceAnalysisService extends Service {
         final List<Bundle> bundleList = new ArrayList<>();
 
         disposable.add(Observable.fromIterable(new AppsTask(getApplication()).getAllPackages())
+                .filter(packageInfo -> {
+                    boolean isSystemApp = (packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 1;
+
+                    //Add all non-system apps
+                    if (!isSystemApp) {
+                        return true;
+                    }
+
+                    //Add all system apps if include-system is enabled
+                    return isSystemEnabled;
+                })
                 .map(packageInfo -> PackageUtil.getMinimalAppByPackageInfo(packageManager, packageInfo))
                 .sorted((o1, o2) -> o1.getDisplayName().compareToIgnoreCase(o2.getDisplayName()))
                 .concatMap(app -> Observable.just(app).delay(500, TimeUnit.MILLISECONDS))
