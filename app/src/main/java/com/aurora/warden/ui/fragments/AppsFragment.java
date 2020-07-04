@@ -102,12 +102,15 @@ public class AppsFragment extends Fragment implements SharedPreferences.OnShared
         setupRecycler();
         setupChip();
         sharedPreferences = Util.getPrefs(requireContext());
-        model = new ViewModelProvider(this).get(AppViewModel.class);
+        model = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
         model.getAppList().observe(getViewLifecycleOwner(), appItems -> {
             originalAppList.addAll(appItems);
             filterAndDispatch(appItems);
         });
-        model.fetchAllApps();
+
+        if (model.getAppList().getValue() == null)
+            model.fetchAllApps();
+
         swipeContainer.setOnRefreshListener(() -> model.fetchAllApps());
     }
 

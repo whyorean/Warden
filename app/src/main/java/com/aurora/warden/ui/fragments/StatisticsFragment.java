@@ -127,7 +127,7 @@ public class StatisticsFragment extends Fragment {
         textColorPrimary = ViewUtil.getStyledAttribute(requireContext(), android.R.attr.textColorPrimary);
         staticDataProvider = StaticDataProvider.getInstance(requireContext());
 
-        viewModel = new ViewModelProvider(this).get(StatsViewModel.class);
+        viewModel = new ViewModelProvider(requireActivity()).get(StatsViewModel.class);
         viewModel.getRecentApps().observe(getViewLifecycleOwner(), staticReports -> {
             staticReportSet.addAll(staticReports);
             populateReportData(staticReports.get(0));

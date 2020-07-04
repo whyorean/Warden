@@ -87,7 +87,7 @@ public class SearchFragment extends Fragment {
         final int backGroundColor = ViewUtil.getStyledAttribute(requireContext(), android.R.attr.colorBackground);
         layoutSearch.setBackgroundColor(ColorUtils.setAlphaComponent(backGroundColor, 245));
         analyticsLayout.setType(3);
-        viewModel = new ViewModelProvider(this).get(ExodusViewModel.class);
+        viewModel = new ViewModelProvider(requireActivity()).get(ExodusViewModel.class);
         viewModel.getData().observe(getViewLifecycleOwner(), reports -> {
             if (reports.isEmpty()) {
                 analyticsLayout.switchState(AnalyticsLayout.State.EMPTY);
