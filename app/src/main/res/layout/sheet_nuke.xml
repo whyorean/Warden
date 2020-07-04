@@ -58,12 +58,20 @@
             android:textAppearance="@style/TextAppearance.Aurora.Line1" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/switch_nuke"
+            android:id="@+id/switch_nuke_export"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:text="@string/string_nuke_export" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_denuke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:text="@string/string_nuke_de_nuke" />
     </LinearLayout>
 
     <LinearLayout

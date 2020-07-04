@@ -81,6 +81,7 @@ public class TrackerAnalysisService extends Service {
     private Gson gson = new GsonBuilder().excludeFieldsWithModifiers(Modifier.TRANSIENT).create();
 
     private boolean isExportEnabled = false;
+    private boolean isDeNuke = false;
     private boolean isSystemNukeEnabled = false;
 
     public static boolean isServiceRunning() {
@@ -98,7 +99,9 @@ public class TrackerAnalysisService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         int intExtra = intent.getIntExtra(Constants.INT_EXTRA, -1);
+        int intExtra2 = intent.getIntExtra(Constants.INT_EXTRA_2, -1);
         isExportEnabled = intExtra == 1;
+        isDeNuke = intExtra2 == 1;
         startAnalysis();
         return START_NOT_STICKY;
     }
@@ -155,7 +158,12 @@ public class TrackerAnalysisService extends Service {
 
                         if (AuroraApplication.isRooted()) {
                             for (ComponentInfo componentInfo : trackerBundle.getComponents()) {
-                                boolean result = camtonoManager.camtono().disable(componentInfo.packageName, componentInfo.name);
+                                boolean result = false;
+                                if (isDeNuke)
+                                    result = camtonoManager.camtono().enable(componentInfo.packageName, componentInfo.name);
+                                else
+                                    result = camtonoManager.camtono().disable(componentInfo.packageName, componentInfo.name);
+
                                 if (result)
                                     Log.d("Component changed -> %s : %s", componentInfo.packageName, componentInfo.name);
                                 else
@@ -166,7 +174,12 @@ public class TrackerAnalysisService extends Service {
                             }
 
                             for (ComponentInfo componentInfo : loggerBundle.getComponents()) {
-                                boolean result = camtonoManager.camtono().disable(componentInfo.packageName, componentInfo.name);
+                                boolean result = false;
+                                if (isDeNuke)
+                                    result = camtonoManager.camtono().enable(componentInfo.packageName, componentInfo.name);
+                                else
+                                    result = camtonoManager.camtono().disable(componentInfo.packageName, componentInfo.name);
+
                                 if (result)
                                     Log.d("Component changed -> %s : %s", componentInfo.packageName, componentInfo.name);
                                 else
@@ -218,11 +231,11 @@ public class TrackerAnalysisService extends Service {
                 .setColor(getResources().getColor(R.color.colorAccent))
                 .setContentText(app == null
                         ? getString(R.string.notification_tracker)
-                        : app.getDisplayName()
+                        : app.getPackageName()
                 )
                 .setContentTitle(app == null
                         ? getString(R.string.notification_tracker_desc)
-                        : app.getPackageName())
+                        : app.getDisplayName())
                 .setLocalOnly(true)
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_notification);

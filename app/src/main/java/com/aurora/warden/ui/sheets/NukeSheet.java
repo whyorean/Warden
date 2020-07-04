@@ -39,8 +39,10 @@ import butterknife.OnClick;
 public class NukeSheet extends BaseBottomSheet {
 
     public static final String TAG = "NUKE_SHEET";
-    @BindView(R.id.switch_nuke)
-    SwitchMaterial switchNuke;
+    @BindView(R.id.switch_nuke_export)
+    SwitchMaterial switchNukeExport;
+    @BindView(R.id.switch_denuke)
+    SwitchMaterial switchDeNuke;
 
     @Nullable
     @Override
@@ -59,7 +61,8 @@ public class NukeSheet extends BaseBottomSheet {
     public void nuke() {
         if (!TrackerAnalysisService.isServiceRunning()) {
             Intent intent = new Intent(requireContext(), TrackerAnalysisService.class);
-            intent.putExtra(Constants.INT_EXTRA, switchNuke.isChecked() ? 1 : 0);
+            intent.putExtra(Constants.INT_EXTRA, switchNukeExport.isChecked() ? 1 : 0);
+            intent.putExtra(Constants.INT_EXTRA_2, switchDeNuke.isChecked() ? 1 : 0);
             requireContext().startService(intent);
         }
         dismissAllowingStateLoss();

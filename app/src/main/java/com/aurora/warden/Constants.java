@@ -31,6 +31,7 @@ public class Constants {
     public static final String INTENT_PACKAGE_NAME = "INTENT_PACKAGE_NAME";
 
     public static final String INT_EXTRA = "INT_EXTRA";
+    public static final String INT_EXTRA_2 = "INT_EXTRA_2";
     public static final String FLOAT_EXTRA = "FLOAT_EXTRA";
     public static final String STRING_EXTRA = "STRING_EXTRA";
     public static final String LIST_EXTRA = "LIST_EXTRA";
