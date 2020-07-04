@@ -88,7 +88,8 @@ public class PackageUtil {
                 .iconDrawable(applicationInfo.loadIcon(packageManager))
                 .installLocation(packageInfo.applicationInfo.sourceDir)
                 .versionName(packageInfo.versionName)
-                .versionCode((long) packageInfo.versionCode);
+                .versionCode((long) packageInfo.versionCode)
+                .applicationInfo(applicationInfo);
 
         if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0)
             builder.isSystem(true);
