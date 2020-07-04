@@ -16,59 +16,79 @@
   ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   ~
   -->
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.aurora.warden.ui.custom.view.ViewFlipper2
-        android:id="@+id/viewFlipper"
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.aurora.warden.ui.custom.layout.ProgressLayout
+        <com.aurora.warden.ui.custom.view.ViewFlipper2
+            android:id="@+id/viewFlipper"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:progressText="@string/action_loading" />
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/AuroraTextStyle.Subtitle"
+            <com.aurora.warden.ui.custom.layout.ProgressLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/margin_normal"
-                android:paddingTop="@dimen/margin_small"
-                android:paddingEnd="@dimen/margin_xsmall"
-                android:paddingBottom="@dimen/margin_small"
-                android:text="@string/action_sort_by" />
+                android:layout_height="match_parent"
+                app:progressText="@string/action_loading" />
 
-            <include layout="@layout/include_filters" />
-
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:id="@+id/swipeContainer"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler"
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/AuroraTextStyle.Subtitle"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:overScrollMode="never"
-                    tools:listitem="@layout/item_app" />
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingEnd="@dimen/margin_xsmall"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="@string/action_sort_by" />
 
-        </LinearLayout>
+                <include layout="@layout/include_filters" />
 
-        <com.aurora.warden.ui.custom.layout.EmptyLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:emptyImage="@drawable/ic_apps"
-            app:emptyText="@string/txt_no_apps" />
-    </com.aurora.warden.ui.custom.view.ViewFlipper2>
-</RelativeLayout>
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipeContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:overScrollMode="never"
+                        tools:listitem="@layout/item_app" />
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            </LinearLayout>
+
+            <com.aurora.warden.ui.custom.layout.EmptyLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:emptyImage="@drawable/ic_apps"
+                app:emptyText="@string/txt_no_apps" />
+        </com.aurora.warden.ui.custom.view.ViewFlipper2>
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/filter_fab"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:text="@string/action_filter"
+        android:textAppearance="@style/TextAppearance.Aurora.Line1"
+        android:textColor="#FFF"
+        app:backgroundTint="?colorAccent"
+        app:icon="@drawable/ic_filter"
+        app:iconTint="#FFF" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

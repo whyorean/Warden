@@ -20,6 +20,7 @@
 package com.aurora.warden.data.model;
 
 import android.app.usage.UsageStats;
+import android.content.pm.ApplicationInfo;
 import android.graphics.drawable.Drawable;
 
 import androidx.annotation.Nullable;
@@ -45,7 +46,6 @@ public class App {
     private boolean isBackupAvailable;
     private boolean isSplit;
     private Integer targetSDK;
-    private Integer uid;
     private Long lastUpdated;
     private Long installedTime;
     private Long versionCode;
@@ -63,6 +63,8 @@ public class App {
     private transient UsageStats usageStats;
     @Nullable
     private transient Drawable iconDrawable;
+
+    private transient ApplicationInfo applicationInfo;
 
     @Override
     public boolean equals(Object obj) {

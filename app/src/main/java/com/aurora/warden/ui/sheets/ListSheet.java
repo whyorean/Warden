@@ -195,6 +195,7 @@ public class ListSheet extends BaseBottomSheet {
         PackageManager packageManager = requireContext().getPackageManager();
         disposable.add(Observable.fromIterable(stringList)
                 .map(packageName -> PackageUtil.getMinimalAppByPackageInfo(packageManager, packageName))
+                .filter(app -> app!=null)
                 .map(AppItem::new)
                 .toList()
                 .subscribeOn(Schedulers.io())

@@ -29,6 +29,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -223,6 +225,15 @@ public class ViewUtil {
         colors.add(context.getResources().getColor(R.color.colorShade05));
         colors.add(context.getResources().getColor(R.color.colorShade06));
         return colors;
+    }
+
+
+
+    public static void applyGrayScaleFilter(ImageView imageView){
+        ColorMatrix matrix = new ColorMatrix();
+        matrix.setSaturation(0);
+        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+        imageView.setColorFilter(filter);
     }
 
     public static String getRawStringFromBitmap(Bitmap bitmap) {

@@ -27,7 +27,6 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.aurora.warden.data.model.App;
 import com.aurora.warden.data.model.items.AppItem;
 import com.aurora.warden.data.model.items.BloatItem;
 import com.aurora.warden.tasks.AppsTask;
@@ -57,16 +56,8 @@ public class AppViewModel extends AndroidViewModel {
     public void fetchAllApps() {
         disposable.add(Observable.fromCallable(() -> new AppsTask(getApplication()).getAllPackages())
                 .flatMap(packageInfoSet -> Observable.fromIterable(packageInfoSet)
-                        .map(packageInfo -> App.builder()
-                                .packageName(packageInfo.applicationInfo.packageName)
-                                .displayName(packageInfo.applicationInfo.loadLabel(packageManager).toString())
-                                .iconDrawable(packageInfo.applicationInfo.loadIcon(packageManager))
-                                .versionCode((long) packageInfo.versionCode)
-                                .versionName(packageInfo.versionName)
-                                .lastUpdated(packageInfo.lastUpdateTime)
-                                .installedTime(packageInfo.firstInstallTime)
-                                .uid(packageInfo.applicationInfo.uid)
-                                .build()))
+                        .map(packageInfo -> PackageUtil.getAppByPackageInfo(packageManager, packageInfo)))
+                .filter(app -> app!=null)
                 .sorted((o1, o2) -> o1.getDisplayName().compareToIgnoreCase(o2.getDisplayName()))
                 .map(AppItem::new)
                 .toList()

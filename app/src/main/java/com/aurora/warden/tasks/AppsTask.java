@@ -20,11 +20,9 @@
 package com.aurora.warden.tasks;
 
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import com.aurora.warden.utils.Util;
 import com.aurora.warden.utils.app.PackageUtil;
 
 import java.util.HashSet;
@@ -34,11 +32,9 @@ import java.util.Set;
 public class AppsTask {
 
     private Context context;
-    private boolean isSystemEnabled;
 
     public AppsTask(Context context) {
         this.context = context;
-        this.isSystemEnabled = Util.isSystemEnabled(context);
     }
 
     public Set<PackageInfo> getAllPackages() {
@@ -49,18 +45,7 @@ public class AppsTask {
 
         for (PackageInfo packageInfo : packageInfoList) {
             if (packageInfo.packageName != null && packageInfo.applicationInfo != null) {
-
-                boolean isSystemApp = (packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 1;
-
-                //Add all non-system apps
-                if (!isSystemApp) {
-                    packageInfoSet.add(packageInfo);
-                }
-
-                //Add all system apps if include-system is enabled
-                if (isSystemApp && isSystemEnabled) {
-                    packageInfoSet.add(packageInfo);
-                }
+                packageInfoSet.add(packageInfo);
             }
         }
         return packageInfoSet;

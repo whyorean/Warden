@@ -96,6 +96,26 @@ public class PackageUtil {
         return builder.build();
     }
 
+    public static App getAppByPackageInfo(PackageManager packageManager, PackageInfo packageInfo) {
+        final ApplicationInfo applicationInfo = packageInfo.applicationInfo;
+        final App.AppBuilder builder = App.builder();
+
+        builder
+                .packageName(applicationInfo.packageName)
+                .displayName(applicationInfo.loadLabel(packageManager).toString())
+                .iconDrawable(applicationInfo.loadIcon(packageManager))
+                .versionCode((long) packageInfo.versionCode)
+                .versionName(packageInfo.versionName)
+                .lastUpdated(packageInfo.lastUpdateTime)
+                .installedTime(packageInfo.firstInstallTime)
+                .applicationInfo(applicationInfo);
+
+        if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0)
+            builder.isSystem(true);
+
+        return builder.build();
+    }
+
     public static App getAppByPackageName(PackageManager packageManager, String packageName) {
         try {
 

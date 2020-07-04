@@ -19,6 +19,7 @@
 
 package com.aurora.warden.data.model.items;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ import com.aurora.warden.R;
 import com.aurora.warden.data.model.App;
 import com.aurora.warden.data.model.items.base.ListItem;
 import com.aurora.warden.data.model.items.base.ListViewHolder;
+import com.aurora.warden.utils.ViewUtil;
 
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
@@ -84,14 +86,19 @@ public class AppItem extends ListItem {
         @Override
         public void bindView(@NotNull ListItem item, @NotNull List<?> list) {
             if (item instanceof AppItem) {
+                Context context = itemView.getContext();
                 App app = ((AppItem) item).getApp();
                 line1.setText(app.getDisplayName());
                 line2.setText(app.getPackageName());
                 line3.setText(StringUtils.joinWith(" \u2022 ",
                         StringUtils.joinWith(".", app.getVersionName(), app.getVersionCode()),
-                        app.getUid()
+                        StringUtils.joinWith(StringUtils.SPACE, context.getString(R.string.string_uid), app.getApplicationInfo().uid),
+                        context.getString(app.isSystem() ? R.string.string_system : R.string.string_user)
                 ));
                 img.setImageDrawable(app.getIconDrawable());
+
+                if (!app.getApplicationInfo().enabled)
+                    ViewUtil.applyGrayScaleFilter(img);
             }
         }
 
@@ -100,6 +107,7 @@ public class AppItem extends ListItem {
             line1.setText(null);
             line2.setText(null);
             line3.setText(null);
+            img.clearColorFilter();
             img.setImageDrawable(null);
         }
     }

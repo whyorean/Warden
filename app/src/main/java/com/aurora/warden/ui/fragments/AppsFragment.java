@@ -20,6 +20,9 @@
 package com.aurora.warden.ui.fragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,25 +42,34 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.aurora.warden.Constants;
 import com.aurora.warden.R;
 import com.aurora.warden.Sort;
+import com.aurora.warden.data.model.Filter;
 import com.aurora.warden.data.model.items.AppItem;
 import com.aurora.warden.ui.activities.AppDetailsActivity;
 import com.aurora.warden.ui.custom.view.ViewFlipper2;
+import com.aurora.warden.ui.sheets.FilterSheet;
+import com.aurora.warden.utils.PrefUtil;
+import com.aurora.warden.utils.Util;
 import com.aurora.warden.utils.ViewUtil;
 import com.aurora.warden.utils.callback.AppDiffCallback;
 import com.aurora.warden.viewmodel.AppViewModel;
 import com.google.android.material.chip.ChipGroup;
+import com.google.gson.Gson;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.adapters.ItemAdapter;
 import com.mikepenz.fastadapter.diff.FastAdapterDiffUtil;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import me.zhanghai.android.fastscroll.FastScrollerBuilder;
 
-public class AppsFragment extends Fragment {
+public class AppsFragment extends Fragment implements SharedPreferences.OnSharedPreferenceChangeListener {
 
 
     @BindView(R.id.viewFlipper)
@@ -72,6 +84,10 @@ public class AppsFragment extends Fragment {
     private AppViewModel model;
     private FastAdapter<AppItem> fastAdapter;
     private ItemAdapter<AppItem> itemAdapter;
+    private List<AppItem> originalAppList = new ArrayList<>();
+    private Filter filter;
+    private SharedPreferences sharedPreferences;
+    private CompositeDisposable disposable = new CompositeDisposable();
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -85,18 +101,77 @@ public class AppsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setupRecycler();
         setupChip();
+        sharedPreferences = Util.getPrefs(requireContext());
         model = new ViewModelProvider(this).get(AppViewModel.class);
-        model.getAppList().observe(getViewLifecycleOwner(), this::dispatchAppsToAdapter);
+        model.getAppList().observe(getViewLifecycleOwner(), appItems -> {
+            originalAppList.addAll(appItems);
+            filterAndDispatch(appItems);
+        });
         model.fetchAllApps();
         swipeContainer.setOnRefreshListener(() -> model.fetchAllApps());
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        try {
+            sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
+        } catch (Exception ignored) {
+
+        }
+        super.onDestroy();
+    }
+
+    @OnClick(R.id.filter_fab)
+    public void showFilterDialog() {
+        if (getChildFragmentManager().findFragmentByTag(FilterSheet.TAG) == null) {
+            final FilterSheet filterSheet = new FilterSheet();
+            filterSheet.show(getChildFragmentManager(), FilterSheet.TAG);
+        }
+    }
+
+    private void filterAndDispatch(List<AppItem> appItems) {
+        //Fetch new filter
+        filter = new Gson().fromJson(PrefUtil.getString(requireContext(), Constants.PREFERENCE_FILTER), Filter.class);
+
+        //Get default filter, if filter not set
+        if (filter == null)
+            filter = Filter.getDefault();
+
+        //Clear old item list
+        if (itemAdapter != null)
+            itemAdapter.clear();
+
+        //Filter the apps
+        disposable.add(Observable.fromIterable(appItems)
+                .filter(appItem -> !filter.isSystem() || appItem.getApp().isSystem())
+                .filter(appItem -> !filter.isUser() || !appItem.getApp().isSystem())
+                .filter(appItem -> !filter.isDisabled() || !appItem.getApp().getApplicationInfo().enabled)
+                .filter(appItem -> !filter.isDebugging() || (appItem.getApp().getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0)
+                .filter(appItem -> !filter.isStopped() || (appItem.getApp().getApplicationInfo().flags & ApplicationInfo.FLAG_STOPPED) != 0)
+                .filter(appItem -> !filter.isLargeHeap() || (appItem.getApp().getApplicationInfo().flags & ApplicationInfo.FLAG_LARGE_HEAP) != 0)
+                .filter(appItem -> !filter.isLaunchable() || (requireContext().getPackageManager().getLaunchIntentForPackage(appItem.getApp().getPackageName())) != null)
+                .filter(appItem -> {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        return !filter.isSuspended() || (appItem.getApp().getApplicationInfo().flags & ApplicationInfo.FLAG_SUSPENDED) != 0;
+                    } else
+                        return true;
+                })
+                .toList()
+                .subscribe(this::dispatchAppsToAdapter, Throwable::printStackTrace));
     }
 
     private void dispatchAppsToAdapter(List<AppItem> appItems) {
         final FastAdapterDiffUtil fastAdapterDiffUtil = FastAdapterDiffUtil.INSTANCE;
         final AppDiffCallback diffCallback = new AppDiffCallback();
-
         final DiffUtil.DiffResult diffResult = fastAdapterDiffUtil.calculateDiff(itemAdapter, appItems, diffCallback);
         fastAdapterDiffUtil.set(itemAdapter, diffResult);
+
         swipeContainer.setRefreshing(false);
 
         if (itemAdapter != null && itemAdapter.getAdapterItems().size() > 0) {
@@ -170,7 +245,7 @@ public class AppsFragment extends Fragment {
                 break;
             case UID:
                 Collections.sort(itemAdapter.getAdapterItems(), (App1, App2) ->
-                        App1.getApp().getUid().compareTo(App2.getApp().getUid()));
+                        Integer.compare(App1.getApp().getApplicationInfo().uid, App2.getApp().getApplicationInfo().uid));
                 break;
             case PACKAGE:
                 Collections.sort(itemAdapter.getAdapterItems(), (App1, App2) ->
@@ -186,5 +261,14 @@ public class AppsFragment extends Fragment {
                 break;
         }
         fastAdapter.notifyAdapterDataSetChanged();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        switch (key) {
+            case Constants.PREFERENCE_FILTER:
+                filterAndDispatch(originalAppList);
+                break;
+        }
     }
 }

@@ -35,6 +35,7 @@
     <string name="about_telegram">"Telegram"</string>
     <string name="about_telegram_summary">"Join the Aurora Support group for discussions or suggestions."</string>
 
+    <string name="action_apply">"Apply"</string>
     <string name="action_cancel">"Cancel"</string>
     <string name="action_canceled">"Canceled!"</string>
     <string name="action_clear">"Clear"</string>
@@ -46,6 +47,8 @@
     <string name="action_disable_all">"Disable All"</string>
     <string name="action_enable">"Enable"</string>
     <string name="action_failed">"Failed!"</string>
+    <string name="action_filter">"Filters"</string>
+    <string name="action_filter_enable">"Enable filters"</string>
     <string name="action_grant">"Grant"</string>
     <string name="action_hide">"Hide"</string>
     <string name="action_ignore">"Ignore"</string>
@@ -88,6 +91,18 @@
     <string name="filter_package">Package</string>
     <string name="filter_date_updated">Date Updated</string>
     <string name="filter_date_installed">Date Installed</string>
+
+    <string name="filter_system">System</string>
+    <string name="filter_disabled">Disabled</string>
+    <string name="filter_debugging">Debugging</string>
+    <string name="filter_stopped">Stopped</string>
+    <string name="filter_suspended">Suspended</string>
+    <string name="filter_large_heap">Large heap</string>
+    <string name="filter_launchable">Launchable</string>
+    <string name="filter_user">User</string>
+
+    <string name="filter_category_location">Install location</string>
+    <string name="filter_category_advance">Advance</string>
 
     <string name="menu_about">"About"</string>
     <string name="menu_apps">"Apps"</string>
@@ -159,6 +174,9 @@
     <string name="string_nuke_export">"Export component list on the go ?"</string>
     <string name="string_nuke_running">"Nuke is already in progress"</string>
     <string name="string_unhide_app">"Do you wish to unhide this app?"</string>
+    <string name="string_uid">UID</string>
+    <string name="string_user">User</string>
+    <string name="string_system">System</string>
 
     <string name="title_activities">"Activities"</string>
     <string name="title_activities_desc">"List of available activities"</string>
