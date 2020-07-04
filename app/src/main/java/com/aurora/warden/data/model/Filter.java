@@ -51,9 +51,9 @@ public class Filter {
 
     public static Filter getDefault() {
         return new FilterBuilder()
-                .isSystem(true)
+                .isSystem(false)
                 .isUser(true)
-                .isDisabled(true)
+                .isDisabled(false)
                 .isDebugging(false)
                 .isSuspended(false)
                 .isDebugging(false)

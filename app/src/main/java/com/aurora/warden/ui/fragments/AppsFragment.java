@@ -140,7 +140,7 @@ public class AppsFragment extends Fragment implements SharedPreferences.OnShared
 
     private void filterAndDispatch(List<AppItem> appItems) {
         //Fetch new filter
-        filter = new Gson().fromJson(PrefUtil.getString(requireContext(), Constants.PREFERENCE_FILTER), Filter.class);
+        filter = Filter.getSavedFilter(requireContext());
 
         //Get default filter, if filter not set
         if (filter == null)
