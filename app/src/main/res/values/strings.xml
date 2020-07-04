@@ -27,7 +27,7 @@
     <string name="about_bitcoin_eth">"Ethereum"</string>
     <string name="about_bitcoin_eth_summary">"Donate via Ethereum (ETH)"</string>
     <string name="about_gitlab">"GitLab"</string>
-    <string name="about_gitlab_summary">"Get the Aurora Walls source code from Aurora OSS on GitLab."</string>
+    <string name="about_gitlab_summary">"Get the Warden source code from Aurora OSS on GitLab."</string>
     <string name="about_libera">"Libera Pay"</string>
     <string name="about_libera_summary">"Become patron on Libera Pay"</string>
     <string name="about_paypal">"Paypal"</string>
