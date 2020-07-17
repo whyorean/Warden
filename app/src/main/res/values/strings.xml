@@ -169,7 +169,7 @@
     <string name="string_info_tracker_no_desc">"However, the app might still be doing some sketchy stuff, do review the following components.\n\n1. Permissions\n2. Services\n3. Providers"</string>
     <string name="string_info_tracker_no_title">"Yay! No trackers"</string>
     <string name="string_info_tracker_working_exodus_desc">"Reports are fetched from Exodus Privacy and displayed here."</string>
-    <string name="string_info_tracker_working_desc">"1. Warden extracts all the class names from the APK.\n2. Matches these class names against a known set of tracker.\n3. Class names that match these signatures are shown as trackers/loggers."</string>
+    <string name="string_info_tracker_working_desc">"1. Warden extracts all the class names from the APK.\n2. Matches these class names against a known set of trackers/loggers.\n3. Class names that match these signatures are shown as trackers/loggers."</string>
     <string name="string_info_tracker_working_title">"How does it work ?"</string>
     <string name="string_nuke_desc">"It is an experimental feature that scans all apps for components that match tracker signature and tries to automatically disable them.\nDisabling components may cause ANRs and FCs, so unless you are sure what you doing, don't do it."</string>
     <string name="string_nuke_title">"Warning! Read before you Nuke it."</string>
@@ -217,10 +217,10 @@
     <string name="txt_root_required">"Requires root access"</string>
     <string name="txt_search_hint">"Enter package name"</string>
     <string name="txt_status_failed">"Scan failed"</string>
-    <string name="txt_status_loggers">"Logger found"</string>
+    <string name="txt_status_loggers">"Logger(s) found"</string>
     <string name="txt_status_no_loggers">"No loggers found"</string>
     <string name="txt_status_no_tracker">"No tracker found"</string>
-    <string name="txt_status_tracker">"Tracker found"</string>
+    <string name="txt_status_tracker">"Tracker(s) found"</string>
 
     <string name="usage_daily">Daily</string>
     <string name="usage_weekly">Weekly</string>
