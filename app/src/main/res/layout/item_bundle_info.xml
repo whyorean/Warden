@@ -40,7 +40,7 @@
             android:ellipsize="end"
             android:fadingEdge="horizontal"
             android:fadingEdgeLength="32dp"
-            android:maxLines="1"
+            android:maxLines="2"
             android:requiresFadingEdge="horizontal"
             android:textAlignment="viewStart"
             android:textAppearance="@style/TextAppearance.Aurora.Line2"
