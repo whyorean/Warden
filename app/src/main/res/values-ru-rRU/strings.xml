@@ -1,0 +1,228 @@
+<!--
+  ~ Warden
+  ~ Copyright (C) 2020, Rahul Kumar Patel <whyorean@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<resources>
+    <string name="about_bhim">"BHIM - UPI"</string>
+    <string name="about_bhim_summary">"Поддержать через UPI"</string>
+    <string name="about_bitcoin_bch">"Bitcoin Cash"</string>
+    <string name="about_bitcoin_bch_summary">"Поддержать через Bitcoin Cash (BCH)"</string>
+    <string name="about_bitcoin_btc">"Bitcoin"</string>
+    <string name="about_bitcoin_btc_summary">"Поддержать через Bitcoin (BTC)"</string>
+    <string name="about_bitcoin_eth">"Ethereum"</string>
+    <string name="about_bitcoin_eth_summary">"Поддержать через Ethereum (ETH)"</string>
+    <string name="about_gitlab">"GitLab"</string>
+    <string name="about_gitlab_summary">"Посмотреть исходный код Warden от группы Aurora OSS на GitLab."</string>
+    <string name="about_libera">"Libera Pay"</string>
+    <string name="about_libera_summary">"Стать патроном на Libera Pay"</string>
+    <string name="about_paypal">"Paypal"</string>
+    <string name="about_paypal_summary">"Поддержать через PayPal"</string>
+    <string name="about_telegram">"Telegram"</string>
+    <string name="about_telegram_summary">"Помощь и общение в группе поддержки Aurora."</string>
+
+    <string name="action_apply">"Применить"</string>
+    <string name="action_cancel">"Отменить"</string>
+    <string name="action_canceled">"Отменено!"</string>
+    <string name="action_clear">"Очистить"</string>
+    <string name="action_close">"Закрыть"</string>
+    <string name="action_completed">"Сканирование завершено"</string>
+    <string name="action_copied">"Скопировано"</string>
+    <string name="action_debloat">"Debloat"</string>
+    <string name="action_disable">"Выключить"</string>
+    <string name="action_disable_all">"Выключить все"</string>
+    <string name="action_enable">"Включить"</string>
+    <string name="action_failed">"Неудалось!"</string>
+    <string name="action_filter">"Фильтры"</string>
+    <string name="action_filter_enable">"Включить фильтры"</string>
+    <string name="action_grant">"Разрешить"</string>
+    <string name="action_hide">"Скрыть"</string>
+    <string name="action_ignore">"Игнорировать"</string>
+    <string name="action_later">"Потом"</string>
+    <string name="action_loading">"Загрузка"</string>
+    <string name="action_loggers">"Логгеры"</string>
+    <string name="action_nuke_it">"Автозачистка"</string>
+    <string name="action_proceed">"Продолжить"</string>
+    <string name="action_scan_now">"Сканировать"</string>
+    <string name="action_scanning">"Сканируем"</string>
+    <string name="action_search_back">"К поиску"</string>
+    <string name="action_show_components">"Компоненты"</string>
+    <string name="action_sort_by">"Сортировка"</string>
+    <string name="action_suspend">"Заморозить"</string>
+    <string name="action_trackers">"Трэкеры"</string>
+    <string name="action_unhide">"Вернуть"</string>
+    <string name="action_uninstall">"Удалить"</string>
+    <string name="action_unsuspend">"Разморозить"</string>
+    <string name="action_update">"Обновить"</string>
+    <string name="action_view_report">"Результаты"</string>
+
+    <string name="app_aurora" translatable="false">"Aurora"</string>
+    <string name="app_desc">"Тонкий контроль приложений"</string>
+    <string name="app_details">"Details"</string>
+    <string name="app_name" translatable="false">"Warden"</string>
+
+    <string name="details_title_bundled">"APK-пакет"</string>
+    <string name="details_title_category">"Категория"</string>
+    <string name="details_title_installed">"Установлен"</string>
+    <string name="details_title_installer">"Установщик"</string>
+    <string name="details_title_package_info">"Информация о пакете"</string>
+    <string name="details_title_sdk">"Требуемый SDK"</string>
+    <string name="details_title_space">Используемые данные</string>
+    <string name="details_title_updated">"Обновлен"</string>
+
+    <string name="filter_name_az">Имя A-Z</string>
+    <string name="filter_name_za">Имя Z-A</string>
+    <string name="filter_size">Размер</string>
+    <string name="filter_uid">UID</string>
+    <string name="filter_package">Пакет</string>
+    <string name="filter_date_updated">Дата обновления</string>
+    <string name="filter_date_installed">Дата установки</string>
+
+    <string name="filter_system">Система</string>
+    <string name="filter_disabled">Выключено</string>
+    <string name="filter_debugging">Отладочное</string>
+    <string name="filter_stopped">Остановлено</string>
+    <string name="filter_suspended">Заморожено</string>
+    <string name="filter_large_heap">Большой heap</string>
+    <string name="filter_launchable">Запускаемое</string>
+    <string name="filter_user">Пользователь</string>
+
+    <string name="filter_category_location">Место установки</string>
+    <string name="filter_category_advance">Расширено</string>
+
+    <string name="menu_about">"О Warden"</string>
+    <string name="menu_apps">"Пакеты"</string>
+    <string name="menu_debloat">"Debloater"</string>
+    <string name="menu_hidden_apps">"Список скрытых"</string>
+    <string name="menu_lab">"Лаборатория"</string>
+    <string name="menu_loggers">"Список логгеры"</string>
+    <string name="menu_scanner">"Сканер"</string>
+    <string name="menu_search">"Поиск"</string>
+    <string name="menu_app_usage">"Активность"</string>
+    <string name="menu_settings">"Настройки"</string>
+    <string name="menu_stats">"Отчеты"</string>
+    <string name="menu_trackers">"Список трэкеров"</string>
+    <string name="menu_warden">"Warden"</string>
+
+    <string name="notification_analysis">"Анализ устройства"</string>
+    <string name="notification_analysis_desc">"Сбор метаданных"</string>
+    <string name="notification_channel_alert">"Warden Alert"</string>
+    <string name="notification_channel_service">"Warden Service"</string>
+    <string name="notification_debloat">"Подчищаем приложения"</string>
+    <string name="notification_debloat_desc">"Сбор метаданных"</string>
+    <string name="notification_tracker">"Отключаем трэкеры"</string>
+    <string name="notification_tracker_desc">"Собираем данные компонентов"</string>
+
+    <string name="permission_appop">"App op"</string>
+    <string name="permission_dangerous">"Dangerous"</string>
+    <string name="permission_development">"Development"</string>
+    <string name="permission_installer">"Installer"</string>
+    <string name="permission_instant">"Instant"</string>
+    <string name="permission_name_app_usage">App Usage Stats</string>
+    <string name="permission_name_notification">Do not disturb access</string>
+    <string name="permission_name_settings">Modify system settings access</string>
+    <string name="permission_pre23">"Pre23"</string>
+    <string name="permission_preinstalled">"Pre installed"</string>
+    <string name="permission_privileged">"Privileged"</string>
+    <string name="permission_runtime">"Runtime"</string>
+    <string name="permission_safe">"Safe"</string>
+    <string name="permission_setup">"Setup"</string>
+    <string name="permission_signature">"Signature"</string>
+    <string name="permission_system">"System"</string>
+    <string name="permission_unknown">"Unknown"</string>
+    <string name="permission_verifier">"Verifier"</string>
+
+    <string name="preference_analysis_header">"Простой анализ"</string>
+    <string name="preference_debloat_header">"Debloater"</string>
+    <string name="preference_nuke_header">"Автозачистка"</string>
+    <string name="preference_ui_header">"Интерфейс"</string>
+    <string name="preferences_debloat">"Действие Debloater по умолчанию"</string>
+    <string name="preferences_include_system">"Обрабатывать сист. приложения"</string>
+    <string name="preferences_include_system_desc">"Включить в список сканирования системные приложения"</string>
+    <string name="preferences_include_system_nuke">"Включить в список автозачистки системные приложения"</string>
+    <string name="preferences_theme_title">"Выберите тему"</string>
+    <string name="preferences_device_awake">"Отключить режим сна"</string>
+    <string name="preferences_device_awake_desc">"Держать устройство активным пока идет сканирование."</string>
+
+    <string name="update_title">"Обновление"</string>
+    <string name="update_desc">"Доступно новое обновление"</string>
+    <string name="update_changes">"Изменения"</string>
+    <string name="update_failed">"Ошибка обновления"</string>
+    <string name="update_unavailable">"Новых версий не обнаружено"</string>
+
+    <string name="string_info_logger_no_desc">"Тем не менее, приложение все-равно может следить за вашей активностью, потому как список известных логгеров далеко не полон."</string>
+    <string name="string_info_logger_no_title">"Логгеров не обнаружено!"</string>
+    <string name="string_info_tracker_no_desc">"Однако это не значит, что приложение совсем невинно, советуем провести аудит следующих компонентов на предмет чего-либо подозрительного:\n\n1. Разрешения\n2. Сервисы\n3. Провайдеры"</string>
+    <string name="string_info_tracker_no_title">"Трэкеров не обнаружено!"</string>
+    <string name="string_info_tracker_working_exodus_desc">"Reports are fetched from Exodus Privacy and displayed here."</string>
+    <string name="string_info_tracker_working_desc">"1. Warden извлекает имена классов напрямую из APK-пакета приложения.\n2. Данные имена затем проверяются на совпадение с публичными списками трэкеров/логгеров.\n3. Подтвержденные результаты затем отображаются как обнаруженные трэкеры/логгеры."</string>
+    <string name="string_info_tracker_working_title">"Как это все работает?"</string>
+    <string name="string_nuke_desc">"Автозачистка является экпериментальной функцией, которая выполняет поиск и отключение всех известных трэкеров автоматически для всех приложений.\nИмейте ввиду, что отключение компонентов может повлечь за собой нестабильность некоторых приложений!"</string>
+    <string name="string_nuke_title">"Внимание! Внимательно прочитайте описание процесса."</string>
+    <string name="string_nuke_export">"Экпортировать список компонентов в процессе?"</string>
+    <string name="string_nuke_de_nuke">"Отменить действия автозачистки?"</string>
+    <string name="string_nuke_running">"Автозачистка уже в процессе выполнения"</string>
+    <string name="string_unhide_app">"Вернуть приложение из скрытых?"</string>
+    <string name="string_uid">UID</string>
+    <string name="string_user">Пользователь</string>
+    <string name="string_system">Система</string>
+
+    <string name="title_activities">"Активности"</string>
+    <string name="title_activities_desc">"Список доступных активностей"</string>
+    <string name="title_component">"Компоненты"</string>
+    <string name="title_component_desc">"Компоненты совпадающие со списоком логгеров\трэкеров"</string>
+    <string name="title_credits">"Благодарности"</string>
+    <string name="title_debloat_profiles">"Debloat-профили"</string>
+    <string name="title_lab">"Экпериментальные действия"</string>
+    <string name="title_links">"Ссылки"</string>
+    <string name="title_permission_desc">"Список разрешений приложения"</string>
+    <string name="title_permissions">"Разрешения"</string>
+    <string name="title_providers">"Провайдеры"</string>
+    <string name="title_providers_desc">"Список всех доступных провайдеров"</string>
+    <string name="title_receivers">"События"</string>
+    <string name="title_receivers_desc">"Список всех доступных событий"</string>
+    <string name="title_scanner">"Сканировать все приложения"</string>
+    <string name="title_search">"Поиск по Exodus Report"</string>
+    <string name="title_services">"Сервисы"</string>
+    <string name="title_services_desc">"Список всех доступных сервисов"</string>
+    <string name="title_warden">"App Warden"</string>
+
+    <string name="txt_camtono_failed">"Неудалось"</string>
+    <string name="txt_camtono_immutable_permission">"Неизменяемое разрешение"</string>
+    <string name="txt_camtono_no_root">"Нет root-доступа"</string>
+    <string name="txt_camtono_success">"Выполнено"</string>
+    <string name="txt_disabled">"Отключено"</string>
+    <string name="txt_enabled">"Включено"</string>
+    <string name="txt_exodus_privacy">"Данные от Exodus Privacy"</string>
+    <string name="txt_exodus_searching">"Поиск отчета Exodus"</string>
+    <string name="txt_exported">"Экпортировано"</string>
+    <string name="txt_no_apps">"Нет приложений"</string>
+    <string name="txt_no_hidden_apps">"Нет скрытых приложений"</string>
+    <string name="txt_not_exported">"Не экпортировано"</string>
+    <string name="txt_reports">"Отчеты"</string>
+    <string name="txt_root_required">"Требуется root-доступ"</string>
+    <string name="txt_search_hint">"Введите имя пакета"</string>
+    <string name="txt_status_failed">"Ошибка сканирования"</string>
+    <string name="txt_status_loggers">"Найденые логгеры"</string>
+    <string name="txt_status_no_loggers">"Логгеров  не обнаружено"</string>
+    <string name="txt_status_no_tracker">"Трэкеров не обнаружено"</string>
+    <string name="txt_status_tracker">"Найденые трэкеры"</string>
+
+    <string name="usage_daily">День</string>
+    <string name="usage_weekly">Неделя</string>
+    <string name="usage_monthly">Месяц</string>
+</resources>
